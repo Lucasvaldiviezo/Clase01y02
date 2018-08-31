@@ -1,47 +1,25 @@
 #include <stdio_ext.h>
 #include <stdlib.h>
-
-
-int getEdad(int* pEdad);
-
+#include "utn.h"
+//Static=privada
 int main()
 {
-    int edad;
-
-    if(getEdad(&edad) == 0)
+    int num;
+    float numDeci;
+    int reint=3;
+    int max=100;
+    int min=0;
+    if(utn_getEntero(&num,reint,"Ingrese un numero: ","Numero erroneo\n",max,min) == 0)
     {
-        printf("La edad es: %d", edad);
+        printf("El numero es: %d\n", num);
     }
+    if(utn_getNumeroDecimal(&numDeci,reint,"Ingrese numero decimal: ","Numero Erroneo\n",max,min)==0)
+    {
+        printf("El numero decimal es: %.2f",numDeci);
+    }
+
     return 0;
 }
 
-int getEdad(int* pEdad)
-{
-    int auxiliarEdad;
-    int retorno = -1;
-    int reintentos;
-    for(reintentos=3;reintentos>0;reintentos--)
-    {
-        printf("Ingrese la edad: ");
-        if(scanf("%d",&auxiliarEdad) == 1)
-        {
-            if(auxiliarEdad >= 0 && auxiliarEdad < 199)
-            {
-                *pEdad = auxiliarEdad;
-                retorno = 0;
-                break;
-            }else
-            {
-                printf("La edad esta fuega de rango [0-199]\n");
-            }
-
-        }else
-        {
-            printf("La edad es numerica \n");
-            __fpurge(stdin);
-        }
-    }
 
 
-    return retorno;
-}
