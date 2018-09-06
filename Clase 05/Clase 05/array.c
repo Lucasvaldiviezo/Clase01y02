@@ -1,4 +1,4 @@
-#include <stdio_ext.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "array.h"
 #define DATO_INVALIDO -1
@@ -65,6 +65,41 @@ int utn_calcularMaximoArray(int* pArray,int limite,int* pMaximo)
         retorno=0;
         *pMaximo=maximo;
     }
+
+    return retorno;
+}
+
+int utn_promedioArray(int* pArray,int limite,float* pPromedio)
+{
+    int i;
+    int retorno;
+    float suma;
+    float auxpromedio;
+    int cantidadValidos=0;
+    int flagPrimerMaximo=0;
+    for(i=0;i < limite;i++)
+    {
+        if(pArray[i]!=DATO_INVALIDO)
+        {
+            suma=suma+pArray[i];
+            cantidadValidos++;
+            if(flagPrimerMaximo==0)
+            {
+                flagPrimerMaximo=1;
+            }
+        }
+
+    }
+    if(flagPrimerMaximo==0)
+    {
+        retorno=-1;
+    }else
+    {
+        auxpromedio=suma/(float)cantidadValidos;
+        *pPromedio=auxpromedio;
+        retorno=0;
+    }
+
 
     return retorno;
 }

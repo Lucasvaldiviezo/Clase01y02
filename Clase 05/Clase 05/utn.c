@@ -1,4 +1,4 @@
-#include <stdio_ext.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "utn.h"
 
@@ -25,7 +25,7 @@ int utn_menu(float numero1,float numero2)
     printf("3. Calcular todas las operaciones\n");
     printf("4. Informar resultados\n");
     printf("5. Salir\n");
-    __fpurge(stdin);
+    fflush(stdin);
     utn_getEntero(&opcion,10,"Seleccione una opcion: ","Esa opcion no es valida \n",6,0);
 
 
@@ -48,7 +48,7 @@ int utn_getNumeroDecimal(float *pNum, int reint, char* msg, char* msgError)
         }else
         {
             printf(msgError);
-            __fpurge(stdin);
+            fflush(stdin);
         }
     }
 
@@ -78,7 +78,7 @@ int utn_getEntero(int* pNum,int reint,char* msg,char* msgError,int maximo,int mi
         }else
         {
             printf(msgError);
-            __fpurge(stdin);
+            fflush(stdin);
         }
     }
 

@@ -1,4 +1,4 @@
-#include <stdio_ext.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "utn.h"
 #include "array.h"
@@ -15,6 +15,7 @@ int main()
     int i;
     int maximo;
     int minimo;
+    float promedio;
 
     while(utn_inicializarArray(edades,DATO_INVALIDO,CANTIDAD_EMPLEADOS)==-1)
     {
@@ -33,11 +34,13 @@ int main()
     }
 
     utn_mostrarArray(edades,CANTIDAD_EMPLEADOS);
-    utn_mostrarArray(edades+2,CANTIDAD_EMPLEADOS-2);
+    //utn_mostrarArray(edades+2,CANTIDAD_EMPLEADOS-2);
     utn_calcularMaximoArray(edades,CANTIDAD_EMPLEADOS,&maximo);
     utn_calcularMinimoArray(edades,CANTIDAD_EMPLEADOS,&minimo);
+    utn_promedioArray(edades,CANTIDAD_EMPLEADOS,&promedio);
     printf("\n\nEl maximo es: %d\n",maximo);
     printf("\nEl minimo es: %d\n",minimo);
+    printf("\nEl promedio es: %.2f\n",promedio);
     return 0;
 }
 
