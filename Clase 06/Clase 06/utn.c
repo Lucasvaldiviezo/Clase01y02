@@ -1,7 +1,7 @@
 #include <stdio_ext.h>
 #include <stdlib.h>
 #include "utn.h"
-
+#include "array.h"
 /**
     utn_getInt:permite ingresar un numero entero y lo validar
     @param *pResultado: guarda el numero 1 ingresado luego de validarlo
@@ -12,7 +12,6 @@
     @param *pResultado: guarda el numero 1 ingresado luego de validarlo
     @return : 0 OK, -1 error
 */
-
 static int getFloat(float* pResultado);
 static int getInt(int* pResultado);
 
@@ -189,13 +188,29 @@ static int getFloat(float* pResultado)
 
 static int getInt(int* pResultado)
 {
-    int ret=-1;
+    /*int ret=-1;
     int num;
 
     if(scanf("%d",&num)==1)
     {
         *pResultado = num;
         ret=0;
+    }*/
+    char cadena[64];
+    int retorno=0;
+    int auxiliar;
+    scanf("%s",cadena);
+
+    if(utn_arrayEsNumero(cadena)==0)
+    {
+        auxiliar=atoi(cadena);
+        *pResultado=auxiliar;
+    }else
+    {
+        retorno = -1;
     }
-    return ret;
+
+    return retorno;
 }
+
+

@@ -118,3 +118,26 @@ int utn_calcularMinimoArray(int* pArray,int limite,int* pMinimo)
     *pMinimo=minimo;
     return 0;
 }
+
+int utn_arrayEsNumero(char* pArray)
+{
+    int retorno=0;
+    int i=0;
+    char aux;
+    aux=pArray[i];
+    while(aux!= 0)
+    {
+        if(pArray[i] >= '0' && pArray[i] <= '9')
+        {
+            i++;
+            aux=pArray[i];
+        }else
+        {
+            break;
+            retorno=-1;
+        }
+
+
+    }
+    return retorno;
+}

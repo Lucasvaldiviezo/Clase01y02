@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio_ext.h>
 #include <stdlib.h>
 #include "utn.h"
 #include "array.h"
@@ -7,7 +7,8 @@
 
 //&salario[0];Esta bien,pero es muy largo
 //salario; => &salario[60] desde donde quiero la direccion de memoria
-
+//void fun(int pA[],int limite) Asi tambien se puede recibir un array
+//auxiliar=*(pArray + i) es otra forma de leer el indice actual
 
 int main()
 {

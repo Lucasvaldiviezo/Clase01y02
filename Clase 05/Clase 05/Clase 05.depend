@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1536189321 source:/home/alumno/Escritorio/Clase01y02/Clase 05/Clase 05/utn.c
+1536269838 source:/home/alumno/Escritorio/Clase01y02/Clase 05/Clase 05/utn.c
 	<stdio_ext.h>
 	<stdlib.h>
 	"utn.h"
 
-1536186632 /home/alumno/Escritorio/Clase01y02/Clase 05/Clase 05/utn.h
+1536269736 /home/alumno/Escritorio/Clase01y02/Clase 05/Clase 05/utn.h
 
 1536195842 source:/home/alumno/Escritorio/Clase01y02/Clase 05/Clase 05/main.c
 	<stdio_ext.h>
@@ -12,12 +12,12 @@
 	"utn.h"
 	"array.h"
 
-1536196329 source:/home/alumno/Escritorio/Clase01y02/Clase 05/Clase 05/array.c
+1536269798 source:/home/alumno/Escritorio/Clase01y02/Clase 05/Clase 05/array.c
 	<stdio_ext.h>
 	<stdlib.h>
 	"array.h"
 
-1536195594 /home/alumno/Escritorio/Clase01y02/Clase 05/Clase 05/array.h
+1536269736 /home/alumno/Escritorio/Clase01y02/Clase 05/Clase 05/array.h
 
 1536262840 source:c:\users\usuario\desktop\lucas\utn\1er cuatrimestre\programacion 1-laboratorio 1\mis codigos\clase01y02\clase 05\clase 05\array.c
 	<stdio.h>
@@ -38,4 +38,18 @@
 	<stdio.h>
 	<stdlib.h>
 	"utn.h"
+
+1536269798 source:/home/alumno/Escritorio/Clase01y02/array.c
+	<stdio_ext.h>
+	<stdlib.h>
+	"array.h"
+
+1536269736 /home/alumno/Escritorio/Clase01y02/array.h
+
+1536269838 source:/home/alumno/Escritorio/Clase01y02/utn.c
+	<stdio_ext.h>
+	<stdlib.h>
+	"utn.h"
+
+1536269736 /home/alumno/Escritorio/Clase01y02/utn.h
 
