@@ -8,12 +8,18 @@
 //salario; => &salario[60] desde donde quiero la direccion de memoria
 int utn_mostrarArray(int* pArray,int limite);
 int utn_inicializarArray(int* pArray,int valor, int limite);
+int utn_calcularmaximoArray(int* pArray,int limite,int* maximo);
 
 int main()
 {
     int edades[CANTIDAD_EMPLEADOS];
     int i;
-    utn_inicializarArray(&edades[0],-1,CANTIDAD_EMPLEADOS);
+    int maximo;
+
+    while(utn_inicializarArray(edades,-1,CANTIDAD_EMPLEADOS)==-1)
+    {
+        printf("La direccion del array esta mal");
+    }
 
     for(i=0;i< CANTIDAD_EMPLEADOS;i++)
     {
@@ -27,18 +33,27 @@ int main()
     }
 
     utn_mostrarArray(edades,CANTIDAD_EMPLEADOS);
+    utn_mostrarArray(edades+2,CANTIDAD_EMPLEADOS-2);
+    utn_calcularmaximoArray(edades,CANTIDAD_EMPLEADOS,&maximo);
+    printf("\nEl maximo es: %d\n",maximo);
     return 0;
 }
 
 int utn_inicializarArray(int* pArray,int valor, int limite)
 {
+    int retorno=-1;
     int i;
-    for(i=0;i < limite;i++)
+    if(pArray != NULL && limite >0)
     {
-        pArray[i]=valor;
+        retorno=0;
+        for(i=0;i < limite;i++)
+        {
+            pArray[i]=valor;
+        }
     }
 
-    return 0;
+
+    return retorno;
 }
 
 int utn_mostrarArray(int* pArray,int limite)
@@ -47,6 +62,21 @@ int utn_mostrarArray(int* pArray,int limite)
     for(i=0;i < limite;i++)
     {
         printf("\nIndex:[%d] - Value:%d - Add:%p",i,pArray[i],pArray+i);
+    }
+
+    return 0;
+}
+
+int utn_calcularmaximoArray(int* pArray,int limite,int* maximo)
+{
+    int i;
+    *maximo = pArray[0];
+    for(i=0;i < limite;i++)
+    {
+        if(pArray[i] > *maximo)
+        {
+            *maximo = pArray[i];
+        }
     }
 
     return 0;
