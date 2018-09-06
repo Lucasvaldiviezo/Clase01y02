@@ -1,6 +1,11 @@
 #include <stdio_ext.h>
 #include <stdlib.h>
 #include "array.h"
+#define DATO_INVALIDO -1
+#define true 1
+#define false 0
+
+
 
 int utn_inicializarArray(int* pArray,int valor, int limite)
 {
@@ -8,11 +13,11 @@ int utn_inicializarArray(int* pArray,int valor, int limite)
     int i;
     if(pArray != NULL && limite >0)
     {
-        retorno=0;
         for(i=0;i < limite;i++)
         {
             pArray[i]=valor;
         }
+        retorno=0;
     }
 
 
@@ -30,32 +35,51 @@ int utn_mostrarArray(int* pArray,int limite)
     return 0;
 }
 
-int utn_calcularMaximoArray(int* pArray,int limite,int* maximo)
+int utn_calcularMaximoArray(int* pArray,int limite,int* pMaximo)
 {
     int i;
-    *maximo = pArray[0];
+    int retorno;
+    int maximo;
+    int flagPrimerMaximo=0;
     for(i=0;i < limite;i++)
     {
-        if(pArray[i] > *maximo)
+        if(pArray[i]!=DATO_INVALIDO)
         {
-            *maximo = pArray[i];
+            if(flagPrimerMaximo == 0)
+            {
+                maximo = pArray[i];
+                flagPrimerMaximo=1;
+            }
+            else if(pArray[i] > maximo)
+            {
+                maximo = pArray[i];
+            }
         }
+
+    }
+    if(flagPrimerMaximo==0)
+    {
+        retorno=-2;
+    }else
+    {
+        retorno=0;
+        *pMaximo=maximo;
     }
 
-    return 0;
+    return retorno;
 }
 
-int utn_calcularMinimoArray(int* pArray,int limite,int* minimo)
+int utn_calcularMinimoArray(int* pArray,int limite,int* pMinimo)
 {
     int i;
-    *minimo= pArray[0];
+    int minimo= pArray[0];
     for(i=0;i < limite;i++)
     {
-        if(pArray[i] < *minimo)
+        if(pArray[i] < minimo)
         {
-            *minimo= pArray[i];
+            minimo= pArray[i];
         }
     }
-
+    *pMinimo=minimo;
     return 0;
 }

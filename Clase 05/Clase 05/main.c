@@ -3,6 +3,7 @@
 #include "utn.h"
 #include "array.h"
 #define CANTIDAD_EMPLEADOS 5
+#define DATO_INVALIDO -1
 
 //&salario[0];Esta bien,pero es muy largo
 //salario; => &salario[60] desde donde quiero la direccion de memoria
@@ -15,7 +16,7 @@ int main()
     int maximo;
     int minimo;
 
-    while(utn_inicializarArray(edades,-1,CANTIDAD_EMPLEADOS)==-1)
+    while(utn_inicializarArray(edades,DATO_INVALIDO,CANTIDAD_EMPLEADOS)==-1)
     {
         printf("La direccion del array esta mal");
     }
