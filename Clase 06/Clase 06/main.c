@@ -32,7 +32,7 @@ int main()
         }*/
 
     }
-    printf("En que orden desea ordenar el array?\n > de menor a mayor.\n < de menor a mayor. \n");
+    printf("En que orden desea el array?\n > de menor a mayor.\n < de mayor a menor. \n");
     __fpurge(stdin);
     scanf("%c",&mayorMenor);
 
