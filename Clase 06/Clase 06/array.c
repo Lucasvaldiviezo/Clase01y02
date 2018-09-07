@@ -156,25 +156,15 @@ int utn_ordenarArray(int* pArray,int limite,char mayorMenor)
             flagNoTermineOrdenar=0;
             for(i=0;i<(limite-1);i++)
             {
-                if(mayorMenor == '>')
+
+                if((pArray[i] > pArray[i+1] && mayorMenor == '>') || (pArray[i] < pArray[i+1] && mayorMenor == '<'))
                 {
-                    if(pArray[i] > pArray[i+1])
-                    {
                         aux=pArray[i];
                         pArray[i]=pArray[i+1];
                         pArray[i+1]=aux;
                         flagNoTermineOrdenar=1;
-                    }
-                }else if(mayorMenor == '<')
-                {
-                    if(pArray[i] < pArray[i+1])
-                    {
-                        aux=pArray[i];
-                        pArray[i]=pArray[i+1];
-                        pArray[i+1]=aux;
-                        flagNoTermineOrdenar=1;
-                    }
                 }
+
 
             }
 
