@@ -7,5 +7,6 @@ int utn_calcularMaximoArray(int* pArray,int limite,int* pMaximo);
 int utn_calcularMinimoArray(int* pArray,int limite,int* pMinimo);
 int utn_promedioArray(int* pArray,int limite,float* promedio);
 int utn_arrayEsNumero(char* pArray);
+int utn_ordenarArray(int* pArray,int limite,char mayorMenor);
 
 #endif // ARRAY_H_INCLUDED

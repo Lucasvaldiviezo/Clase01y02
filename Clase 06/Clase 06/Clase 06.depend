@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1536277607 source:/home/alumno/Escritorio/Clase01y02/Clase 06/Clase 06/array.c
+1536282045 source:/home/alumno/Escritorio/Clase01y02/Clase 06/Clase 06/array.c
 	<stdio_ext.h>
 	<stdlib.h>
 	"array.h"
 
-1536277615 /home/alumno/Escritorio/Clase01y02/Clase 06/Clase 06/array.h
+1536281914 /home/alumno/Escritorio/Clase01y02/Clase 06/Clase 06/array.h
 
-1536277366 source:/home/alumno/Escritorio/Clase01y02/Clase 06/Clase 06/main.c
+1536281442 source:/home/alumno/Escritorio/Clase01y02/Clase 06/Clase 06/main.c
 	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
