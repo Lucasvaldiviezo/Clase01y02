@@ -24,12 +24,12 @@ int utn_inicializarArray(int* pArray,int valor, int limite)
     return retorno;
 }
 
-int utn_mostrarArray(int* pArray,int limite)
+int utn_mostrarArray(float* pArray,int limite)
 {
     int i;
     for(i=0;i < limite;i++)
     {
-        printf("\nIndex:[%d] - Value:%d - Add:%p",i,pArray[i],pArray+i);
+        printf("\nIndex:[%d] - Value:%.2f - Add:%p",i,pArray[i],pArray+i);
     }
 
     return 0;

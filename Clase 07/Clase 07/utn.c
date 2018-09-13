@@ -1,5 +1,6 @@
 #include <stdio_ext.h>
 #include <stdlib.h>
+#include <string.h>
 #include "utn.h"
 
 /**
@@ -15,6 +16,7 @@
 
 static int getFloat(float* pResultado);
 static int getInt(int* pResultado);
+static int isFloat(char* pBuffer);
 
 int utn_menu(float numero1,float numero2)
 {
@@ -46,7 +48,6 @@ int utn_getNumeroDecimal(float *pNum, int reint, char* msg, char* msgError,float
             if(getFloat(&buffer) == 0 &&
                 buffer <= maximo && buffer >= minimo )
             {
-
                     *pNum = buffer;
                     retorno = 0;
                     break;
@@ -88,7 +89,6 @@ int utn_getEntero(int* pNum,int reint,char* msg,char* msgError,int maximo,int mi
         }else
         {
             printf(msgError);
-            __fpurge(stdin);
         }
     }
 
@@ -139,7 +139,6 @@ int utn_multiplicacion(float *pResultado,float numero1, float numero2)
 {
 
     *pResultado=numero1*numero2;
-
     return 0;
 }
 
@@ -183,29 +182,47 @@ void utn_texto(float resultado, char* msg)
     printf(msg,resultado);
 }
 
+static int isFloat(char* pBuffer)
+{
+
+   return 0;
+}
+
+static int getString(char* pBufferString)
+{
+    __fpurge(stdin);
+    fgets(pBufferString,sizeof(pBufferString),stdin);
+    if(pBufferString[strlen(pBufferString)-1]=='\n')
+    {
+        pBufferString[strlen(pBufferString)-1]='\0';
+    }
+    return 0;
+}
 
 static int getFloat(float* pResultado)
 {
-    int ret=-1;
-    float num;
+    int retorno=-1;
+    char bufferString[4096];
 
-    if(scanf("%f",&num)==1)
+    if(getString(bufferString) == 0 && isFloat(bufferString)==0)
     {
-        *pResultado = num;
-        ret=0;
+
+        *pResultado=atof(bufferString);
+        retorno=0;
+
     }
-    return ret;
+    return retorno;
 }
 
 static int getInt(int* pResultado)
 {
-    int ret=-1;
+    int retorno=-1;
     int num;
 
     if(scanf("%d",&num)==1)
     {
         *pResultado = num;
-        ret=0;
+        retorno=0;
     }
-    return ret;
+    return retorno;
 }
