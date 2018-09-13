@@ -9,13 +9,12 @@ int main()
 {
 
     float edades[CANTIDAD_EMPLEADOS];
-    char nombres[15][50];
     int i;
 
     for(i=0;i< CANTIDAD_EMPLEADOS;i++)
     {
 
-        utn_getNumeroDecimal(edades,1,"Ingrese la edad: \n", "Esa no es una edad\n",200,0);
+        utn_getNumeroDecimal(&edades[i],1,"Ingrese la edad: \n", "Esa no es una edad\n",200,0);
 
     }
 
