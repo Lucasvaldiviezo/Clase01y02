@@ -25,7 +25,7 @@ typedef struct
     float altura;
 }Persona;
 
-int printPersona(Persona per);
+int printPersona(Persona* per);
 
 int main()
 {
@@ -39,9 +39,7 @@ int main()
 
 
 
-    printPersona(p);
-
-
+    printPersona(&p);
     /*int data[5];
     int i;
     for(i=0;i<5;i++)
@@ -64,12 +62,12 @@ int main()
     return 0;
 }
 
-int printPersona(Persona per)
+int printPersona(Persona* per)
 {
-    printf("Su nombre es: %s\n",per.nombre);
-    printf("Su DNI es: %s\n",per.dni);
-    printf("Su edad es: %d\n",per.edad);
-    printf("Su altura es: %.2f\n", per.altura);
+    printf("Su nombre es: %s\n",per->nombre);
+    printf("Su DNI es: %s\n",per->dni);
+    printf("Su edad es: %d\n",per->edad);
+    printf("Su altura es: %.2f\n", per->altura);
     return 0;
 }
 
