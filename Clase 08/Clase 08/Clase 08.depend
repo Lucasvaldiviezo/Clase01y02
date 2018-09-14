@@ -6,17 +6,18 @@
 
 1536879005 /home/alumno/Escritorio/Clase01y02/Clase 08/Clase 08/array.h
 
-1536878990 source:/home/alumno/Escritorio/Clase01y02/Clase 08/Clase 08/utn.c
+1536887730 source:/home/alumno/Escritorio/Clase01y02/Clase 08/Clase 08/utn.c
 	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
 	"utn.h"
 
-1536791319 /home/alumno/Escritorio/Clase01y02/Clase 08/Clase 08/utn.h
+1536887730 /home/alumno/Escritorio/Clase01y02/Clase 08/Clase 08/utn.h
 
-1536886645 source:/home/alumno/Escritorio/Clase01y02/Clase 08/Clase 08/main.c
-	<stdio.h>
+1536888248 source:/home/alumno/Escritorio/Clase01y02/Clase 08/Clase 08/main.c
+	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
 	"array.h"
+	"utn.h"
 

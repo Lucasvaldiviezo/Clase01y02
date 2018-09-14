@@ -1,7 +1,8 @@
-#include <stdio.h>
+#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "array.h"
+#include "utn.h"
 
 /*struct S_Persona
 {
@@ -26,19 +27,21 @@ typedef struct
 }Persona;
 
 int printPersona(Persona* per);
+int altaPersona(Persona* per);
+int getString(char* pBufferString,char* msg,int limite);
 
 int main()
 {
 
     Persona p;
-    p.edad=9;
+    /*p.edad=9;
     p.altura=1.90;
     //fgets(P.nombre,sizeof(P.nombre),stdin);
     strncpy(p.nombre,"Lucas",sizeof(p.nombre));
-    strncpy(p.dni,"40091498",sizeof(p.dni));
+    strncpy(p.dni,"40091498",sizeof(p.dni));*/
 
 
-
+    altaPersona(&p);
     printPersona(&p);
     /*int data[5];
     int i;
@@ -61,7 +64,22 @@ int main()
 
     return 0;
 }
+int altaPersona(Persona* per)
+{
+    char nombreAux[70];
+    char dniAux[20];
+    int edadAux;
+    float alturaAux;
+    getString(nombreAux,"Ingrese nombre: ",70);
+    getString(dniAux,"Ingrese DNI: ",20);
+    scanf("%d",&per->edad);
+    scanf("%f",&per->altura);
 
+    strncpy(per->dni,dniAux,20);
+    strncpy(per->nombre,nombreAux,70);
+
+    return 0;
+}
 int printPersona(Persona* per)
 {
     printf("Su nombre es: %s\n",per->nombre);
@@ -71,3 +89,14 @@ int printPersona(Persona* per)
     return 0;
 }
 
+int getString(char* pBufferString,char* msg,int limite)
+{
+    __fpurge(stdin);
+    printf(msg);
+    fgets(pBufferString,limite,stdin);
+    if(pBufferString[strlen(pBufferString)-1]=='\n')
+    {
+        pBufferString[strlen(pBufferString)-1]='\0';
+    }
+    return 0;
+}

@@ -17,6 +17,7 @@
 static int getFloat(float* pResultado);
 static int getInt(int* pResultado);
 static int isFloat(char* pBuffer);
+static int getString(char* pBufferString);
 
 int utn_menu(float numero1,float numero2)
 {
@@ -181,6 +182,7 @@ void utn_texto(float resultado, char* msg)
 {
     printf(msg,resultado);
 }
+
 
 static int isFloat(char* pBuffer)
 {
