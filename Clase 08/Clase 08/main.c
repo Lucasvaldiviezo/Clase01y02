@@ -1,4 +1,4 @@
-#include <stdio_ext.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "array.h"
@@ -32,7 +32,7 @@ int getString(char* pBufferString,char* msg,int limite);
 
 int main()
 {
-
+    float numero;
     Persona p;
     /*p.edad=9;
     p.altura=1.90;
@@ -40,9 +40,10 @@ int main()
     strncpy(p.nombre,"Lucas",sizeof(p.nombre));
     strncpy(p.dni,"40091498",sizeof(p.dni));*/
 
-
-    altaPersona(&p);
-    printPersona(&p);
+    utn_getNumeroDecimal(&numero,4,"Ingrese numero decimal: \n","Ese no es un numero\n",4096,0);
+    printf("El numero es: %f\n",numero);
+    //altaPersona(&p);
+    //printPersona(&p);
     /*int data[5];
     int i;
     for(i=0;i<5;i++)
@@ -91,7 +92,7 @@ int printPersona(Persona* per)
 
 int getString(char* pBufferString,char* msg,int limite)
 {
-    __fpurge(stdin);
+    fflush(stdin);
     printf(msg);
     fgets(pBufferString,limite,stdin);
     if(pBufferString[strlen(pBufferString)-1]=='\n')

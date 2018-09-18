@@ -1,4 +1,4 @@
-#include <stdio_ext.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "utn.h"
@@ -17,7 +17,7 @@
 static int getFloat(float* pResultado);
 static int getInt(int* pResultado);
 static int isFloat(char* pBuffer);
-static int getString(char* pBufferString);
+static int getString(char* pBufferString,int limite);
 
 int utn_menu(float numero1,float numero2)
 {
@@ -28,7 +28,7 @@ int utn_menu(float numero1,float numero2)
     printf("3. Calcular todas las operaciones\n");
     printf("4. Informar resultados\n");
     printf("5. Salir\n");
-    __fpurge(stdin);
+    fflush(stdin);
     utn_getEntero(&opcion,10,"Seleccione una opcion: ","Esa opcion no es valida \n",6,0);
 
 
@@ -56,7 +56,7 @@ int utn_getNumeroDecimal(float *pNum, int reint, char* msg, char* msgError,float
             }else
             {
                 printf("%s",msgError);
-                __fpurge(stdin);
+                fflush(stdin);
             }
 
 
@@ -186,14 +186,25 @@ void utn_texto(float resultado, char* msg)
 
 static int isFloat(char* pBuffer)
 {
+    int i=0;
+    int retorno=0;
+    while(pBuffer[i] != '\0')
+    {
+        if(pBuffer[i] < '0' || pBuffer[i] > '9')
+        {
+            retorno=-1;
+            break;
+        }
+        i++;
+    }
 
-   return 0;
+    return retorno;
 }
 
-static int getString(char* pBufferString)
+static int getString(char* pBufferString,int limite)
 {
-    __fpurge(stdin);
-    fgets(pBufferString,sizeof(pBufferString),stdin);
+    fflush(stdin);
+    fgets(pBufferString,limite,stdin);
     if(pBufferString[strlen(pBufferString)-1]=='\n')
     {
         pBufferString[strlen(pBufferString)-1]='\0';
@@ -205,14 +216,17 @@ static int getFloat(float* pResultado)
 {
     int retorno=-1;
     char bufferString[4096];
-
-    if(getString(bufferString) == 0 && isFloat(bufferString)==0)
+if(pResultado != NULL)
+{
+  if(getString(bufferString,4096) == 0 && isFloat(bufferString)==0)
     {
 
         *pResultado=atof(bufferString);
         retorno=0;
 
     }
+}
+
     return retorno;
 }
 
