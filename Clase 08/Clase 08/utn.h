@@ -67,11 +67,11 @@
 int utn_menu(float numero1,float numero2);
 int utn_getNumeroDecimal(float* pNum, int reint, char* msg, char* msgError,float maximo,float minimo);
 int utn_getEntero(int* pNum,int reint,char* msg,char* msgError,int maximo,int minimo);
-//int utn_getCaracter(char* pOpcion,char* msg, char* msgError,int reint);
 int utn_suma(float *pResultado,float numero1, float numero2);
 int utn_resta(float *pResultado,float numero1, float numero2);
 int utn_multiplicacion(float *pResultado,float numero1, float numero2);
 int utn_division(float *pResultado,float numero1, float numero2);
 int utn_factoreo(float  numero);
+int utn_getTelefono(char* pTelefono,char* msg, char* msgError);
 void utn_texto(float resultado, char* msg);
 #endif // UTN_H_INCLUDED

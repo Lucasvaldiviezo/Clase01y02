@@ -16,8 +16,10 @@
 
 static int getFloat(float* pResultado);
 static int getInt(int* pResultado);
+static int isInt(char* pBuffer);
 static int isFloat(char* pBuffer);
 static int getString(char* pBufferString,int limite);
+static int isTelefono(char* pBuffer);
 
 int utn_menu(float numero1,float numero2)
 {
@@ -68,58 +70,84 @@ int utn_getNumeroDecimal(float *pNum, int reint, char* msg, char* msgError,float
 }
 int utn_getEntero(int* pNum,int reint,char* msg,char* msgError,int maximo,int minimo)
 {
-    int auxiliarNum;
+    int buffer;
     int retorno = -1;
-    for(;reint>0;reint--)
+
+    if(pNum != NULL && msg != NULL && msgError !=NULL && minimo<=maximo && reint >= 0)
     {
-        printf(msg);
-        if(getInt(&auxiliarNum) == 0)
+
+        do
         {
-            if(auxiliarNum > minimo && auxiliarNum < maximo)
+            reint--;
+            printf("%s",msg);
+            if(getInt(&buffer) == 0 &&
+                buffer <= maximo && buffer >= minimo )
             {
-                *pNum = auxiliarNum;
-                retorno = 0;
-                break;
+                    *pNum = buffer;
+                    retorno = 0;
+                    break;
 
             }else
             {
-                printf(msgError);
+                printf("%s",msgError);
+                fflush(stdin);
             }
 
 
+        }while(reint >= 0);
+
+    }
+
+    return retorno;
+}
+int utn_getTelefono(char* pTelefono,char* msg, char* msgError)
+{
+    int retorno=-1;
+    char* buffer;
+    int max=10;
+    if(pTelefono != NULL && msg != NULL && msgError!=NULL)
+    {
+        printf("%s",msg);
+        if(getString(&buffer,max)==0 && isTelefono(&buffer)==0)
+        {
+            retorno=0;
+            *pTelefono=buffer;
         }else
         {
-            printf(msgError);
+            printf("%s",msgError);
         }
     }
 
 
     return retorno;
 }
-
-/*int utn_getCaracter(char* pOpcion,char* msg, char* msgError,int reint)
+static int isTelefono(char* pBuffer)
 {
-    char opcion;
-    int retorno=-1;
-
-
-    for(;reint > 0;reint--)
+    int retorno=0;
+    int i=0;
+    int contadorGuion=0;
+    while(pBuffer[i]!='\0')
     {
-        printf(msg);
-        scanf("%s",&opcion);
-        if(opcion=='a' || opcion=='b'||opcion=='c'|| opcion=='d' || opcion=='e')
+        if(pBuffer[i]=='-' && contadorGuion==0)
         {
-            *pOpcion = opcion;
-            retorno = 0;
-            break;
-        }else
-        {
-            printf(msgError);
+            contadorGuion++;
+            i++;
+            continue;
         }
+        if(pBuffer[i] < '0' || pBuffer[i] > '9')
+        {
+            retorno=-1;
+            break;
+        }
+        i++;
     }
-    return retorno;
-}*/
+    if(contadorGuion==0)
+    {
+        retorno=-1;
+    }
 
+    return retorno;
+}
 int utn_suma(float *pResultado,float numero1,float numero2)
 {
 
@@ -183,24 +211,6 @@ void utn_texto(float resultado, char* msg)
     printf(msg,resultado);
 }
 
-
-static int isFloat(char* pBuffer)
-{
-    int i=0;
-    int retorno=0;
-    while(pBuffer[i] != '\0')
-    {
-        if(pBuffer[i] < '0' || pBuffer[i] > '9')
-        {
-            retorno=-1;
-            break;
-        }
-        i++;
-    }
-
-    return retorno;
-}
-
 static int getString(char* pBufferString,int limite)
 {
     fflush(stdin);
@@ -230,16 +240,61 @@ if(pResultado != NULL)
     return retorno;
 }
 
+static int isFloat(char* pBuffer)
+{
+    int i=0;
+    int retorno=0;
+    int contadorPuntos=0;
+    while(pBuffer[i] != '\0')
+    {
+        if(pBuffer[i]=='.' && contadorPuntos==0)
+        {
+            contadorPuntos++;
+            i++;
+            continue;
+        }
+        if(pBuffer[i] < '0' || pBuffer[i] > '9')
+        {
+            retorno=-1;
+            break;
+        }
+        i++;
+    }
+
+    return retorno;
+}
+
 static int getInt(int* pResultado)
 {
-    int retorno=-1;
-    int num;
-
-    if(scanf("%d",&num)==1)
+        int retorno=-1;
+        char bufferString[4096];
+    if(pResultado != NULL)
     {
-        *pResultado = num;
-        retorno=0;
+      if(getString(bufferString,4096) == 0 && isInt(bufferString)==0)
+        {
+
+            *pResultado=atoi(bufferString);
+            retorno=0;
+
+        }
     }
+    return retorno;
+}
+
+static int isInt(char* pBuffer)
+{
+    int i=0;
+    int retorno=0;
+    while(pBuffer[i] != '\0')
+    {
+        if(pBuffer[i] < '0' || pBuffer[i] > '9')
+        {
+            retorno=-1;
+            break;
+        }
+        i++;
+    }
+
     return retorno;
 }
 

@@ -33,6 +33,9 @@ int getString(char* pBufferString,char* msg,int limite);
 int main()
 {
     float numero;
+    int numeroEntero;
+    int i;
+    char telefono[10];
     Persona p;
     /*p.edad=9;
     p.altura=1.90;
@@ -40,8 +43,10 @@ int main()
     strncpy(p.nombre,"Lucas",sizeof(p.nombre));
     strncpy(p.dni,"40091498",sizeof(p.dni));*/
 
-    utn_getNumeroDecimal(&numero,4,"Ingrese numero decimal: \n","Ese no es un numero\n",4096,0);
-    printf("El numero es: %f\n",numero);
+    utn_getTelefono(telefono,"Ingrese su telefono con un guion en el medio: \n","Ese no es un telefono\n");
+    printf("Su telefono es: %s\n",telefono);
+
+
     //altaPersona(&p);
     //printPersona(&p);
     /*int data[5];
