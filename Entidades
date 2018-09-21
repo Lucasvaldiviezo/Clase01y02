@@ -1,0 +1,16 @@
+ENTIDADES DEL PARCIAL(-Campo de esa entidad)(--Campo de otra entidad relacionada)
+
+Pantalla:
+-ID
+-Tipo
+-Nombre
+-Direccion
+-isEmpty
+
+Contratacion:
+-ID
+-Video
+-Precio
+-Dias
+-CUIT del Cliente
+--IDPantalla
