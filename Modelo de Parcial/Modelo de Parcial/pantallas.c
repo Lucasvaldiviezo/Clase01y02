@@ -62,6 +62,48 @@ int pan_cargarIndice(Pantalla* pPantalla,int indice,int limite)
 
 int pan_modificarIndice(Pantalla* pPantalla,int id, int limite)
 {
+    int retorno=-1;
+    char auxNombre[128];
+    char auxDireccion[128];
+    int auxTipo;
+    float auxPrecio;
+    int indice;
+    indice=pan_buscarPantallaPorId(pPantalla,limite,id);
+    if(indice >= 0)
+    {
+        if(pPantalla != NULL && limite >0)
+        {
+            printf("Ingrese el nuevo nombre de la pantalla:");
+            if(getString(auxNombre,128)==0)
+            {
+                strncpy(pPantalla[indice].nombre,auxNombre,128);
+
+                if(utn_getEntero(&auxTipo,2,"Ingrese el nuevo tipo(1 LCD,0 LED): ","Ese no es un tipo valido\n",2,-1)==0)
+                {
+                    pPantalla[indice].tipo=auxTipo;
+
+                    if(utn_getNumeroDecimal(&auxPrecio,10,"Ingrese el nuevo precio de la Pantalla:","Ese no es un precio valido\n",4096,0)==0)
+                    {
+                        pPantalla[indice].precio=auxPrecio;
+                        printf("Ingrese la direccion: ");
+                        if(getString(auxDireccion,128)==0)
+                        {
+                            strncpy(pPantalla[indice].direccion,auxDireccion,128);
+                            retorno =0;
+                        }
+                    }
+
+                }
+            }
+        }
+    }else
+    {
+        printf("El ID no existe");
+    }
+
+
+
+    return retorno;
 
     return 0;
 }
@@ -78,6 +120,26 @@ int pan_buscarPantallaPorId(Pantalla* pPantalla,int limite,int id)
             if(pPantalla[i].ID==id)
             {
                 retorno=i;
+                break;
+            }
+        }
+    }
+    return retorno;
+}
+
+int pan_borrarPantalla(Pantalla* pPantalla,int limite,int id)
+{
+    int retorno=-1;
+    int i;
+
+    for(i=0;i<limite;i++)
+    {
+        if(pPantalla[i].isEmpty==0)
+        {
+            if(pPantalla[i].ID==id)
+            {
+                pPantalla[i].isEmpty=-1;
+                retorno=0;
                 break;
             }
         }

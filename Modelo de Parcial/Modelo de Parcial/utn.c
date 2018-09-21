@@ -17,6 +17,7 @@
 static int getFloat(float* pResultado);
 static int getInt(int* pResultado);
 static int isFloat(char* pBuffer);
+static int isInt(char* pBuffer);
 
 
 int utn_menu(float numero1,float numero2)
@@ -239,14 +240,35 @@ if(pResultado != NULL)
 
 static int getInt(int* pResultado)
 {
-    int retorno=-1;
-    int num;
-
-    if(scanf("%d",&num)==1)
+        int retorno=-1;
+        char bufferString[4096];
+    if(pResultado != NULL)
     {
-        *pResultado = num;
-        retorno=0;
+      if(getString(bufferString,4096) == 0 && isInt(bufferString)==0)
+        {
+
+            *pResultado=atoi(bufferString);
+            retorno=0;
+
+        }
     }
+    return retorno;
+}
+
+static int isInt(char* pBuffer)
+{
+    int i=0;
+    int retorno=0;
+    while(pBuffer[i] != '\0')
+    {
+        if(pBuffer[i] < '0' || pBuffer[i] > '9')
+        {
+            retorno=-1;
+            break;
+        }
+        i++;
+    }
+
     return retorno;
 }
 

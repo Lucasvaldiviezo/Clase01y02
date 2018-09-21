@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1537486536 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/main.c
+1537492114 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/main.c
 	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
 	"utn.h"
 	"pantallas.h"
 
-1537487745 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/pantallas.c
+1537492018 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/pantallas.c
 	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
@@ -15,7 +15,7 @@
 
 1537490557 /home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/pantallas.h
 
-1537487579 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/utn.c
+1537491502 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/utn.c
 	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
