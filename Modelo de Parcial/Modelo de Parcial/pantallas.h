@@ -18,5 +18,6 @@ int pan_mostrarIndice(Pantalla* pPantalla,int indice);
 int pan_getEmptyIndex(Pantalla* pPantalla,int limite,int* indiceVacio);
 int pan_modificarIndice(Pantalla* pPantalla,int id, int limite);
 int pan_buscarPantallaPorId(Pantalla* pPantalla,int limite,int id);
+int pan_borrarPantalla(Pantalla* pPantalla,int limite,int id);
 
 #endif // PANTALLAS_H_INCLUDED

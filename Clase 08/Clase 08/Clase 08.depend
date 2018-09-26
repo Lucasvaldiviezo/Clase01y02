@@ -1,21 +1,21 @@
 # depslib dependency file v1.0
-1536879521 source:/home/alumno/Escritorio/Clase01y02/Clase 08/Clase 08/array.c
-	<stdio_ext.h>
+1537997686 source:/home/alumno/Escritorio/Clase01y02/Clase 08/Clase 08/array.c
+	<stdio.h>
 	<stdlib.h>
 	"array.h"
 
-1536879005 /home/alumno/Escritorio/Clase01y02/Clase 08/Clase 08/array.h
+1537997686 /home/alumno/Escritorio/Clase01y02/Clase 08/Clase 08/array.h
 
-1536887730 source:/home/alumno/Escritorio/Clase01y02/Clase 08/Clase 08/utn.c
-	<stdio_ext.h>
+1537997686 source:/home/alumno/Escritorio/Clase01y02/Clase 08/Clase 08/utn.c
+	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"utn.h"
 
-1536887730 /home/alumno/Escritorio/Clase01y02/Clase 08/Clase 08/utn.h
+1537997686 /home/alumno/Escritorio/Clase01y02/Clase 08/Clase 08/utn.h
 
-1536888248 source:/home/alumno/Escritorio/Clase01y02/Clase 08/Clase 08/main.c
-	<stdio_ext.h>
+1537997838 source:/home/alumno/Escritorio/Clase01y02/Clase 08/Clase 08/main.c
+	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"array.h"

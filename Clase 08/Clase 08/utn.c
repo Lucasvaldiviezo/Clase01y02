@@ -103,15 +103,15 @@ int utn_getEntero(int* pNum,int reint,char* msg,char* msgError,int maximo,int mi
 int utn_getTelefono(char* pTelefono,char* msg, char* msgError)
 {
     int retorno=-1;
-    char* buffer;
+    char buffer[10];
     int max=10;
     if(pTelefono != NULL && msg != NULL && msgError!=NULL)
     {
         printf("%s",msg);
-        if(getString(&buffer,max)==0 && isTelefono(&buffer)==0)
+        if(getString(buffer,max)==0 && isTelefono(buffer)==0)
         {
             retorno=0;
-            *pTelefono=buffer;
+            strncpy(pTelefono,buffer,max);
         }else
         {
             printf("%s",msgError);
