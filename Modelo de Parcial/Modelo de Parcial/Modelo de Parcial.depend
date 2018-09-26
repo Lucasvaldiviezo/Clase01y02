@@ -1,27 +1,28 @@
 # depslib dependency file v1.0
-1537492114 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/main.c
+1538003125 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/main.c
 	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
 	"utn.h"
 	"pantallas.h"
+	"contratacion.h"
 
-1537492326 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/pantallas.c
+1538002833 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/pantallas.c
 	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
 	"pantallas.h"
 	"utn.h"
 
-1537490557 /home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/pantallas.h
+1537999121 /home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/pantallas.h
 
-1537491502 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/utn.c
+1537997686 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/utn.c
 	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
 	"utn.h"
 
-1537485161 /home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/utn.h
+1537997686 /home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/utn.h
 
 1537482573 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/producto.c
 	<stdio_ext.h>
@@ -31,4 +32,14 @@
 	"utn.h"
 
 1537482925 /home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/producto.h
+
+1538003258 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/contratacion.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"pantallas.h"
+	"contratacion.h"
+
+1538002801 /home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/contratacion.h
 

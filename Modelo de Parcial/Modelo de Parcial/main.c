@@ -3,21 +3,23 @@
 #include <string.h>
 #include "utn.h"
 #include "pantallas.h"
+#include "contratacion.h"
 #define PANTALLAS_MAX 100
 #define CONTRATACIONES_MAX 1000
 
 int main()
 {
     int indiceVacio;
-    int i;
     int opcion;
     int id;
     int salir=0;
     Pantalla pantallas[PANTALLAS_MAX];
+    Contratacion contrataciones[CONTRATACIONES_MAX];
     pan_cargarDatosVacio(pantallas,PANTALLAS_MAX);
+    con_cargarDatosVacio(contrataciones,CONTRATACIONES_MAX);
     do
     {
-    utn_getEntero(&opcion,3,"\n1)Cargar una pantalla\n2)Imprimir lista de pantallas\n3)Modificar una pantalla\n4)Borrar una pantalla\n5)Salir\n","Error",6,0);
+    utn_getEntero(&opcion,3,"\n1)Cargar una pantalla\n2)Imprimir lista de pantallas\n3)Modificar una pantalla\n4)Borrar una pantalla\n5)Contratar una publicidad\n6)Salir\n","Error",7,0);
         switch(opcion)
         {
             case 1:
@@ -35,13 +37,7 @@ int main()
 
                     break;
                 case 2:
-                    for(i=0;i<PANTALLAS_MAX;i++)
-                    {
-                        if(pantallas[i].isEmpty==0)
-                        {
-                            pan_mostrarIndice(pantallas,i);
-                        }
-                    }
+                        pan_mostrarIndice(pantallas,PANTALLAS_MAX);
                     break;
                 case 3:
                     if(utn_getEntero(&id,10,"Ingrese el ID de la pantalla que desea modificar: ","Ese no es un ID valido\n",PANTALLAS_MAX,-1)==0)
@@ -56,6 +52,27 @@ int main()
                     }
                     break;
                 case 5:
+                        pan_mostrarIndice(pantallas,PANTALLAS_MAX);
+                        if(utn_getEntero(&id,10,"\nIngrese el ID de la pantalla: ","Ese no es un ID valido",PANTALLAS_MAX,-1)==0)
+                        {
+                            if(pan_buscarPantallaPorId(pantallas,PANTALLAS_MAX,id)!= -1)
+                            {
+                                if(con_getEmptyIndex(contrataciones,PANTALLAS_MAX,&indiceVacio)==0)
+                                {
+                                    con_cargarIndice(contrataciones,indiceVacio,CONTRATACIONES_MAX,id);
+                                    break;
+                                }
+                                else
+                                {
+                                    printf("No hay lugar");
+                                }
+                            }
+                        }else
+                        {
+                            printf("Ese ID no existe.");
+                        }
+                    break;
+                case 6:
                 salir = 1;
 
         }

@@ -5,12 +5,13 @@ Pantalla:
 -Tipo
 -Nombre
 -Direccion
+-Precio
 -isEmpty
 
 Contratacion:
 -ID
 -Video
--Precio
 -Dias
 -CUIT del Cliente
 --IDPantalla
+-isEmpty
