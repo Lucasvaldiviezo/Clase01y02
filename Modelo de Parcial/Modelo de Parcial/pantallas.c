@@ -158,10 +158,10 @@ int pan_mostrarIndice(Pantalla* pPantalla,int limite)
                 if(pPantalla[i].isEmpty==0)
                 {
                     printf("\nEl ID de la pantalla es: %d", pPantalla[i].ID);
-                    printf("|| El nombre de la pantalla es: %s",pPantalla[i].nombre);
-                    printf("||El tipo de la pantalla es(LCD:1, LED:0): %d ",pPantalla[i].tipo);
-                    printf("||El precio de la pantalla es: %.2f por dia",pPantalla[i].precio);
-                    printf("||La direccion de la pantalla es: %s",pPantalla[i].direccion);
+                    printf(" || El nombre de la pantalla es: %s",pPantalla[i].nombre);
+                    printf(" ||El tipo de la pantalla es(LCD:1, LED:0): %d ",pPantalla[i].tipo);
+                    printf(" ||El precio de la pantalla es: %.2f por dia",pPantalla[i].precio);
+                    printf(" || La direccion de la pantalla es: %s",pPantalla[i].direccion);
                     retorno=0;
                 }
 

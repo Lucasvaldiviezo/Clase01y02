@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1538003125 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/main.c
+1538003305 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/main.c
 	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
@@ -7,7 +7,7 @@
 	"pantallas.h"
 	"contratacion.h"
 
-1538002833 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/pantallas.c
+1538004582 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/pantallas.c
 	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
@@ -33,7 +33,7 @@
 
 1537482925 /home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/producto.h
 
-1538003258 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/contratacion.c
+1538005705 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/contratacion.c
 	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
@@ -41,5 +41,5 @@
 	"pantallas.h"
 	"contratacion.h"
 
-1538002801 /home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/contratacion.h
+1538004739 /home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/contratacion.h
 
