@@ -63,8 +63,6 @@ int con_cargarDatosVacio(Contratacion* pContratacion, int limite)
 int con_modificarIndice(Contratacion* pContratacion,int id,int limite)
 {
     int retorno=-1;
-    char auxNombreVideo[128];
-    char auxCuitCliente[128];
     int auxDias;
     int indice;
 
@@ -74,24 +72,10 @@ int con_modificarIndice(Contratacion* pContratacion,int id,int limite)
     {
         if(pContratacion != NULL && limite >0)
         {
-            printf("Ingrese su nuevo CUIT: ");
-            if(getString(auxCuitCliente,128)==0)
-            {
-                strncpy(pContratacion[indice].cuitCliente,auxCuitCliente,128);
-
-                if(utn_getEntero(&auxDias,2,"Ingrese la nueva cantidad de Dias que desea: ","\nEsa no es una cantidad valida",DIAS_MAX,-1)==0)
+                if(utn_getEntero(&auxDias,2,"Ingrese la nueva cantidad de Dias que desea: ","\nEsa no es una cantidad valida\n",DIAS_MAX,-1)==0)
                 {
                     pContratacion[indice].dias=auxDias;
-                    printf("Ingrese el nuevo nombre del video: ");
-                    if(getString(auxNombreVideo,128)==0)
-                    {
-                        strncpy(pContratacion[indice].nombreVideo,auxNombreVideo,128);
-                        retorno =0;
-
-                    }
-
                 }
-            }
         }
     }else
     {
@@ -144,6 +128,31 @@ int con_buscarContratacionPorId(Contratacion* pContratacion,int limite,int id)
     return retorno;
 }
 
+int con_imprimirContratacionesCuit(Contratacion* pContratacion,int limite,Pantalla* pPantalla,int limite2)
+{
+    char cuit[20];
+    int retorno=-1;
+    int i=0;
+    printf("Ingrese su CUIT: ");
+    if(getString(cuit,20)==0)
+    {
+        if(pContratacion != NULL && limite > 0)
+        {
+            for(i=0;i<limite;i++)
+            {
+                if(pContratacion[i].isEmpty==0 && strcmp(pContratacion[i].cuitCliente,cuit)==0)
+                {
+                        pan_mostrarIndice(pPantalla,limite2);
+                        retorno=0;
+                }
+
+            }
+
+        }
+    }
+
+    return retorno;
+}
 static int generarID(void)
 {
     static int cont = -1; //es privada de la funcion, además no muere

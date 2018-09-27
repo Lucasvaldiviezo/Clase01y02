@@ -5,6 +5,31 @@
 #include "utn.h"
 static int generarID(void);
 
+int pan_cargarForzadaIndice(Pantalla* pPantalla,int limite,char* nombrePantalla, char* direccion,int tipo, int precio)
+{
+    int retorno=-1;
+    int indice;
+    pan_getEmptyIndex(pPantalla,limite,&indice);
+
+    if(pPantalla != NULL && limite >0)
+    {
+          if(indice >= 0)
+          {
+            strncpy(pPantalla[indice].nombre,nombrePantalla,128);
+            pPantalla[indice].tipo=tipo;
+            pPantalla[indice].precio=precio;
+            strncpy(pPantalla[indice].direccion,direccion,128);
+            pPantalla[indice].ID=generarID();
+            pPantalla[indice].isEmpty=0;
+            retorno =0;
+          }
+
+    }
+
+
+    return retorno;
+}
+
 int pan_cargarDatosVacio(Pantalla* pPantalla, int limite)
 {
     int retorno=-1;
@@ -157,11 +182,11 @@ int pan_mostrarIndice(Pantalla* pPantalla,int limite)
         {
                 if(pPantalla[i].isEmpty==0)
                 {
-                    printf("\nEl ID de la pantalla es: %d", pPantalla[i].ID);
-                    printf(" || El nombre de la pantalla es: %s",pPantalla[i].nombre);
-                    printf(" ||El tipo de la pantalla es(LCD:1, LED:0): %d ",pPantalla[i].tipo);
-                    printf(" ||El precio de la pantalla es: %.2f por dia",pPantalla[i].precio);
-                    printf(" || La direccion de la pantalla es: %s",pPantalla[i].direccion);
+                    printf("\n-El ID de la pantalla es: %d", pPantalla[i].ID);
+                    printf("\n-El nombre de la pantalla es: %s",pPantalla[i].nombre);
+                    printf("\n-El tipo de la pantalla es(LCD:1, LED:0): %d ",pPantalla[i].tipo);
+                    printf("\n-El precio de la pantalla es: %.2f por dia",pPantalla[i].precio);
+                    printf("\n-La direccion de la pantalla es: %s",pPantalla[i].direccion);
                     retorno=0;
                 }
 

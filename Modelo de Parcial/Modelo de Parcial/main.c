@@ -24,6 +24,8 @@ int main()
     Contratacion contrataciones[CONTRATACIONES_MAX];
     pan_cargarDatosVacio(pantallas,PANTALLAS_MAX);
     con_cargarDatosVacio(contrataciones,CONTRATACIONES_MAX);
+    pan_cargarForzadaIndice(pantallas,PANTALLAS_MAX,"LG","OBELISCO",1,50);
+    pan_cargarForzadaIndice(pantallas,PANTALLAS_MAX,"SAMSUNG","CABILDO",0,40);
     do
     {
     utn_getEntero(&opcion,3,TEXTO_MENU,"Error",8,0);
@@ -76,6 +78,25 @@ int main()
                 }
                 break;
             case 6:
+                if(con_imprimirContratacionesCuit(contrataciones,CONTRATACIONES_MAX)==0)
+                {
+                    if(utn_getEntero(&id,10,"\nIngrese el ID de la pantalla: ","Ese no es un ID valido",PANTALLAS_MAX,-1)==0)
+                    {
+                        if(pan_buscarPantallaPorId(pantallas,PANTALLAS_MAX,id)!= -1)
+                        {
+                                con_modificarIndice(contrataciones,indiceVacio,CONTRATACIONES_MAX);
+                                break;
+                        }
+                    }else
+                    {
+                        printf("Ese ID no existe.");
+                    }
+                }else
+                {
+                    printf("El CUIT no existe o no tiene contrataciones");
+                }
+                break;
+            case 7:
             salir = 1;
 
         }

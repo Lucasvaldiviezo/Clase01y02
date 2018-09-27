@@ -1,5 +1,6 @@
 #ifndef CONTRATACION_H_INCLUDED
 #define CONTRATACION_H_INCLUDED
+#include "pantallas.h"
 
 struct S_contratacion{
 int ID;
@@ -15,4 +16,5 @@ int con_cargarDatosVacio(Contratacion* pContratacion, int limite);
 int con_getEmptyIndex(Contratacion* pContratacion,int limite,int* indiceVacio);
 int con_modificarIndice(Contratacion* pContratacion,int id,int limite);
 int con_buscarContratacionPorId(Contratacion* pContratacion,int limite,int id);
+int con_imprimirContratacionesCuit(Contratacion* pContratacion,int limite,Pantalla* pPantalla,int limite2);
 #endif // CONTRATACION_H_INCLUDED
