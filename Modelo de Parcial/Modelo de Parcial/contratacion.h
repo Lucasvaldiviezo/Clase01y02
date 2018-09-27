@@ -19,4 +19,6 @@ int con_buscarContratacionPorId(Contratacion* pContratacion,int limite,int id);
 int con_imprimirContratacionesCuit(Contratacion* pContratacion,int limite,Pantalla* pPantalla,int limite2,char* cuitVacio);
 int con_borrarContratacion(Contratacion* pContratacion,int limite,int indiceContratacion);
 int con_buscarContratacionPorIdyCuit(Contratacion* pContratacion,int limite,int idPantalla,char* cuit);
+int con_mostrarIndices(Contratacion* pContratacion,int limite, Pantalla* pPantalla, int limite2);
+int con_calcularFacturaciones(Contratacion* pContratacion,int limite,Pantalla* pPantalla,int limite2);
 #endif // CONTRATACION_H_INCLUDED

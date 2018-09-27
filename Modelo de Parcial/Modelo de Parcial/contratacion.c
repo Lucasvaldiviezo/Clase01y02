@@ -183,7 +183,7 @@ int con_imprimirContratacionesCuit(Contratacion* pContratacion,int limite,Pantal
                     posicion=pan_buscarPantallaPorId(pPantalla,limite2,pContratacion[i].idPantalla);
                     pan_mostrarUnIndice(pPantalla,limite2,posicion);
                     retorno=0;
-                    printf("-Dias: %d",pContratacion[i].dias);
+                    printf("-Dias: %d\n",pContratacion[i].dias);
                 }
 
             }
@@ -193,6 +193,64 @@ int con_imprimirContratacionesCuit(Contratacion* pContratacion,int limite,Pantal
 
     return retorno;
 }
+
+int con_calcularFacturaciones(Contratacion* pContratacion,int limite,Pantalla* pPantalla,int limite2)
+{
+    char cuit[20];
+    int retorno=-1;
+    int i=0;
+    int posicion;
+    float total;
+    printf("Ingrese su CUIT: ");
+    if(getString(cuit,20)==0)
+    {
+        if(pContratacion != NULL && limite > 0)
+        {
+            for(i=0;i<limite;i++)
+            {
+                if(pContratacion[i].isEmpty==0 && strcmp(pContratacion[i].cuitCliente,cuit)==0)
+                {
+                    posicion=pan_buscarPantallaPorId(pPantalla,limite2,pContratacion[i].idPantalla);
+                    total=pContratacion[i].dias * pPantalla[posicion].precio;
+                    pan_mostrarUnIndice(pPantalla,limite2,posicion);
+                    printf("-El precio de la facturacion es: %.2f\n",total);
+                    retorno=0;
+
+                }
+
+            }
+
+        }
+    }
+
+    return retorno;
+}
+
+int con_mostrarIndices(Contratacion* pContratacion,int limite, Pantalla* pPantalla, int limite2)
+{
+    int retorno=-1;
+    int posicion;
+    int i=0;
+    if(pPantalla != NULL && limite2 > 0 && pContratacion!=NULL && limite > 0)
+    {
+        for(i=0;i<limite;i++)
+        {
+                if(pContratacion[i].isEmpty==0)
+                {
+                    posicion=pan_buscarPantallaPorId(pPantalla,limite2,pContratacion[i].idPantalla);
+                    printf("\n-El nombre de la pantalla es: %s",pPantalla[posicion].nombre);
+                    printf("\n-El nombre del video es: %s", pContratacion[i].nombreVideo);
+                    printf("\n-La cantidad de dias es: %d", pContratacion[i].dias);
+                    printf("\n-El cuit del cliente es: %s\n", pContratacion[i].cuitCliente);
+                    retorno=0;
+                }
+        }
+
+    }
+
+    return retorno;
+}
+
 static int generarID(void)
 {
     static int cont = -1; //es privada de la funcion, además no muere
