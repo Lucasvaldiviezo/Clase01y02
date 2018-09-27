@@ -172,7 +172,7 @@ int pan_borrarPantalla(Pantalla* pPantalla,int limite,int id)
     return retorno;
 }
 
-int pan_mostrarIndice(Pantalla* pPantalla,int limite)
+int pan_mostrarIndices(Pantalla* pPantalla,int limite)
 {
     int retorno=-1;
     int i=0;
@@ -186,7 +186,7 @@ int pan_mostrarIndice(Pantalla* pPantalla,int limite)
                     printf("\n-El nombre de la pantalla es: %s",pPantalla[i].nombre);
                     printf("\n-El tipo de la pantalla es(LCD:1, LED:0): %d ",pPantalla[i].tipo);
                     printf("\n-El precio de la pantalla es: %.2f por dia",pPantalla[i].precio);
-                    printf("\n-La direccion de la pantalla es: %s",pPantalla[i].direccion);
+                    printf("\n-La direccion de la pantalla es: %s\n",pPantalla[i].direccion);
                     retorno=0;
                 }
 
@@ -196,6 +196,28 @@ int pan_mostrarIndice(Pantalla* pPantalla,int limite)
 
     return retorno;
 }
+
+int pan_mostrarUnIndice(Pantalla* pPantalla,int limite,int indice)
+{
+    int retorno=-1;
+    if(pPantalla != NULL && limite > 0)
+    {
+        if(pPantalla[indice].isEmpty==0)
+        {
+            printf("\n-El ID de la pantalla es: %d", pPantalla[indice].ID);
+            printf("\n-El nombre de la pantalla es: %s",pPantalla[indice].nombre);
+            printf("\n-El tipo de la pantalla es(LCD:1, LED:0): %d ",pPantalla[indice].tipo);
+            printf("\n-El precio de la pantalla es: %.2f por dia",pPantalla[indice].precio);
+            printf("\n-La direccion de la pantalla es: %s\n",pPantalla[indice].direccion);
+            retorno=0;
+        }
+
+    }
+
+    return retorno;
+}
+
+
 int pan_getEmptyIndex(Pantalla* pPantalla,int limite,int* indiceVacio)
 {
     int i=0;

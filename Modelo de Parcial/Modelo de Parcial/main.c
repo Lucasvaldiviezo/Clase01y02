@@ -12,7 +12,8 @@
 4)Borrar una pantalla\n\
 5)Contratar una publicidad\n\
 6)Modificar una contratacion\n\
-7)Salir\n"
+7)Cancelar una contratacion\n\
+8)Salir\n"
 
 int main()
 {
@@ -20,15 +21,18 @@ int main()
     int opcion;
     int id;
     int salir=0;
+    int indiceContratacion;
+    char cuitVacio[20];
     Pantalla pantallas[PANTALLAS_MAX];
     Contratacion contrataciones[CONTRATACIONES_MAX];
     pan_cargarDatosVacio(pantallas,PANTALLAS_MAX);
     con_cargarDatosVacio(contrataciones,CONTRATACIONES_MAX);
     pan_cargarForzadaIndice(pantallas,PANTALLAS_MAX,"LG","OBELISCO",1,50);
     pan_cargarForzadaIndice(pantallas,PANTALLAS_MAX,"SAMSUNG","CABILDO",0,40);
+    pan_cargarForzadaIndice(pantallas,PANTALLAS_MAX,"MSI","CORRIENTES",1,80);
     do
     {
-    utn_getEntero(&opcion,3,TEXTO_MENU,"Error",8,0);
+    utn_getEntero(&opcion,3,TEXTO_MENU,"Error",9,0);
         switch(opcion)
         {
             case 1:
@@ -42,7 +46,7 @@ int main()
                 }
                 break;
             case 2:
-                pan_mostrarIndice(pantallas,PANTALLAS_MAX);
+                pan_mostrarIndices(pantallas,PANTALLAS_MAX);
                 break;
             case 3:
                 if(utn_getEntero(&id,10,"Ingrese el ID de la pantalla que desea modificar: ","Ese no es un ID valido\n",PANTALLAS_MAX,-1)==0)
@@ -57,7 +61,7 @@ int main()
                 }
                 break;
             case 5:
-                pan_mostrarIndice(pantallas,PANTALLAS_MAX);
+                pan_mostrarIndices(pantallas,PANTALLAS_MAX);
                 if(utn_getEntero(&id,10,"\nIngrese el ID de la pantalla: ","Ese no es un ID valido",PANTALLAS_MAX,-1)==0)
                 {
                     if(pan_buscarPantallaPorId(pantallas,PANTALLAS_MAX,id)!= -1)
@@ -78,14 +82,14 @@ int main()
                 }
                 break;
             case 6:
-                if(con_imprimirContratacionesCuit(contrataciones,CONTRATACIONES_MAX,pantallas,PANTALLAS_MAX)==0)
+                if(con_imprimirContratacionesCuit(contrataciones,CONTRATACIONES_MAX,pantallas,PANTALLAS_MAX,cuitVacio)==0)
                 {
-                    if(utn_getEntero(&id,10,"\nIngrese el ID de la pantalla: ","Ese no es un ID valido",PANTALLAS_MAX,-1)==0)
+                    if(utn_getEntero(&id,10,"\nIngrese el ID de la pantalla: ","Ese no es un ID valido",9999,-1)==0)
                     {
                         if(pan_buscarPantallaPorId(pantallas,PANTALLAS_MAX,id)!= -1)
                         {
-                                con_modificarIndice(contrataciones,indiceVacio,CONTRATACIONES_MAX);
-                                break;
+                                indiceContratacion=con_buscarContratacionPorIdyCuit(contrataciones,CONTRATACIONES_MAX,id,cuitVacio);
+                                con_modificarIndice(contrataciones,indiceContratacion,CONTRATACIONES_MAX);
                         }
                     }else
                     {
@@ -97,6 +101,25 @@ int main()
                 }
                 break;
             case 7:
+                if(con_imprimirContratacionesCuit(contrataciones,CONTRATACIONES_MAX,pantallas,PANTALLAS_MAX,cuitVacio)==0)
+                {
+                    if(utn_getEntero(&id,10,"\nIngrese el ID de la pantalla: ","Ese no es un ID valido",PANTALLAS_MAX,-1)==0)
+                    {
+                        if(pan_buscarPantallaPorId(pantallas,PANTALLAS_MAX,id) != -1)
+                        {
+                                indiceContratacion=con_buscarContratacionPorIdyCuit(contrataciones,CONTRATACIONES_MAX,id,cuitVacio);
+                                con_borrarContratacion(contrataciones,CONTRATACIONES_MAX,indiceContratacion);
+                        }
+                    }else
+                    {
+                        printf("Ese ID no existe.");
+                    }
+                }else
+                {
+                    printf("El CUIT no existe o no tiene contrataciones");
+                }
+                break;
+            case 8:
             salir = 1;
 
         }
