@@ -16,10 +16,11 @@
 
 static int getFloat(float* pResultado);
 static int getInt(int* pResultado);
-static int isInt(char* pBuffer);
-static int isFloat(char* pBuffer);
 static int getString(char* pBufferString,int limite);
 static int isTelefono(char* pBuffer);
+static int isInt(char* pBuffer);
+static int isFloat(char* pBuffer);
+static int isLetra(char* pBuffer);
 
 int utn_menu(float numero1,float numero2)
 {
@@ -121,33 +122,28 @@ int utn_getTelefono(char* pTelefono,char* msg, char* msgError)
 
     return retorno;
 }
-static int isTelefono(char* pBuffer)
-{
-    int retorno=0;
-    int i=0;
-    int contadorGuion=0;
-    while(pBuffer[i]!='\0')
-    {
-        if(pBuffer[i]=='-' && contadorGuion==0)
-        {
-            contadorGuion++;
-            i++;
-            continue;
-        }
-        if(pBuffer[i] < '0' || pBuffer[i] > '9')
-        {
-            retorno=-1;
-            break;
-        }
-        i++;
-    }
-    if(contadorGuion==0)
-    {
-        retorno=-1;
-    }
 
+int utn_getNombre(char* pNombre,char* msg,char* msgError)
+{
+    int retorno=-1;
+    int max=50;
+    char buffer[max];
+    if(pNombre != NULL && msg != NULL && msgError!=NULL)
+    {
+        printf("%s",msg);
+        if(getString(buffer,max)==0 && isLetra(buffer)==0)
+        {
+            retorno=0;
+            strncpy(pNombre,buffer,max);
+        }else
+        {
+            printf("%s",msgError);
+            system("pause");
+        }
+    }
     return retorno;
 }
+
 int utn_suma(float *pResultado,float numero1,float numero2)
 {
 
@@ -240,6 +236,24 @@ if(pResultado != NULL)
     return retorno;
 }
 
+
+static int getInt(int* pResultado)
+{
+        int retorno=-1;
+        char bufferString[4096];
+    if(pResultado != NULL)
+    {
+      if(getString(bufferString,4096) == 0 && isInt(bufferString)==0)
+        {
+
+            *pResultado=atoi(bufferString);
+            retorno=0;
+
+        }
+    }
+    return retorno;
+}
+
 static int isFloat(char* pBuffer)
 {
     int i=0;
@@ -264,22 +278,6 @@ static int isFloat(char* pBuffer)
     return retorno;
 }
 
-static int getInt(int* pResultado)
-{
-        int retorno=-1;
-        char bufferString[4096];
-    if(pResultado != NULL)
-    {
-      if(getString(bufferString,4096) == 0 && isInt(bufferString)==0)
-        {
-
-            *pResultado=atoi(bufferString);
-            retorno=0;
-
-        }
-    }
-    return retorno;
-}
 
 static int isInt(char* pBuffer)
 {
@@ -293,6 +291,51 @@ static int isInt(char* pBuffer)
             break;
         }
         i++;
+    }
+
+    return retorno;
+}
+
+static int isLetra(char* pBuffer)
+{
+    int i=0;
+    int retorno=0;
+    while(pBuffer[i] != '\0')
+    {
+        if(pBuffer[i] < 'A' || pBuffer[i] > 'z')
+        {
+            retorno=-1;
+            break;
+        }
+        i++;
+    }
+
+    return retorno;
+}
+
+static int isTelefono(char* pBuffer)
+{
+    int retorno=0;
+    int i=0;
+    int contadorGuion=0;
+    while(pBuffer[i]!='\0')
+    {
+        if(pBuffer[i]=='-' && contadorGuion==0)
+        {
+            contadorGuion++;
+            i++;
+            continue;
+        }
+        if(pBuffer[i] < '0' || pBuffer[i] > '9')
+        {
+            retorno=-1;
+            break;
+        }
+        i++;
+    }
+    if(contadorGuion==0)
+    {
+        retorno=-1;
     }
 
     return retorno;
