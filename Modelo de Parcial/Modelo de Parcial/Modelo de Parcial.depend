@@ -7,7 +7,7 @@
 	"pantallas.h"
 	"contratacion.h"
 
-1538009642 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/pantallas.c
+1538010105 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/pantallas.c
 	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
@@ -33,7 +33,7 @@
 
 1537482925 /home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/producto.h
 
-1538008708 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/contratacion.c
+1538011212 source:/home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/contratacion.c
 	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
@@ -41,6 +41,6 @@
 	"pantallas.h"
 	"contratacion.h"
 
-1538010131 /home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/contratacion.h
+1538010318 /home/alumno/Escritorio/Clase01y02/Modelo de Parcial/Modelo de Parcial/contratacion.h
 	"pantallas.h"
 

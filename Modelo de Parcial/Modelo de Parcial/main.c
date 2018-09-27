@@ -78,7 +78,7 @@ int main()
                 }
                 break;
             case 6:
-                if(con_imprimirContratacionesCuit(contrataciones,CONTRATACIONES_MAX)==0)
+                if(con_imprimirContratacionesCuit(contrataciones,CONTRATACIONES_MAX,pantallas,PANTALLAS_MAX)==0)
                 {
                     if(utn_getEntero(&id,10,"\nIngrese el ID de la pantalla: ","Ese no es un ID valido",PANTALLAS_MAX,-1)==0)
                     {

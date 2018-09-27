@@ -142,7 +142,10 @@ int con_imprimirContratacionesCuit(Contratacion* pContratacion,int limite,Pantal
             {
                 if(pContratacion[i].isEmpty==0 && strcmp(pContratacion[i].cuitCliente,cuit)==0)
                 {
-                        pan_mostrarIndice(pPantalla,limite2);
+                       /* pContratacion[i].idPantalla
+                        pos= buscarpor id Pantalla
+                        print pantalla(pos)*/
+                        //pan_mostrarIndice(pPantalla,limite2);
                         retorno=0;
                 }
 
