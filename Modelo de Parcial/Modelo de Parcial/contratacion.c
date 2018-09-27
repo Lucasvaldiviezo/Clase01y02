@@ -215,7 +215,6 @@ int con_calcularFacturaciones(Contratacion* pContratacion,int limite,Pantalla* p
                     pan_mostrarUnIndice(pPantalla,limite2,posicion);
                     printf("-El precio de la facturacion es: %.2f\n",total);
                     retorno=0;
-
                 }
 
             }
