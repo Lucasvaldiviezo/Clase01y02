@@ -1,0 +1,15 @@
+Asociado:
+-ID
+-DNI
+-Nombre
+-Apellido
+-Edad
+-IsEmpty
+-Motivo
+-Estado
+
+Ambulancia:
+-ID
+-Tiempo Insumido(Cuanto tardo en asignar la ambulancia)
+--Estado
+-IsEmpty
