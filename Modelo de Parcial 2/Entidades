@@ -1,15 +1,18 @@
+||ENTIDADES||(-- es Relacion)
 Asociado:
 -ID
 -DNI
 -Nombre
 -Apellido
 -Edad
--IsEmpty
 -Motivo
--Estado
+-IsEmpty
 
-Ambulancia:
+Llamada:
 -ID
--Tiempo Insumido(Cuanto tardo en asignar la ambulancia)
---Estado
+-Estado
+-Motivo
+-Tiempo
+--ID Ambulancia
+--ID Asociado
 -IsEmpty
