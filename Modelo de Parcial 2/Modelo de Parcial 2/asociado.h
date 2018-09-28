@@ -8,8 +8,8 @@ struct S_asociado
     char nombre[128];
     char apellido[128];
     int edad;
-    char motivo[128];
-    char estado[10];
+    int motivo;
+    int estado;
     int isEmpty;
 }typedef Asociado;
 
