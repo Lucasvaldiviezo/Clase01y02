@@ -260,6 +260,49 @@ int pantalla_altaForzada(Pantalla* array,int limite,char* nombre,char* direccion
     return retorno;
 }
 
+int pantalla_ImprimirPantallaUnica(Pantalla* pantallas,int lenPantallas,int indice)
+{
+    int retorno = -1;
+    if(lenPantallas > 0 && pantallas != NULL && indice >= 0 && indice <= lenPantallas)
+    {
+
+        if(!pantallas[indice].isEmpty)
+        {
+            printf("\nEl Id de la pantalla es: %d\n",pantallas[indice].idPantalla);
+            printf("El nombre de la pantalla es: %s\n",pantallas[indice].nombre);
+            printf("La direccion de la pantalla es: %s\n",pantallas[indice].direccion);
+            printf("El precio de la pantalla es: %.2f\n",pantallas[indice].precio);
+            printf("El tipo de la pantalla es: %d\n",pantallas[indice].tipo);
+            retorno = 0;
+        }
+
+    }
+    return retorno;
+}
+
+int pantalla_ListarPantallas(Pantalla* pantallas,int lenPantallas)
+{
+    int retorno = -1;
+    int i;
+    if(lenPantallas > 0 && pantallas != NULL)
+    {
+        retorno = 0;
+        for(i=0;i<lenPantallas;i++)
+        {
+            if(!pantallas[i].isEmpty)
+            {
+                printf("\nEl Id de la pantalla es: %d\n",pantallas[i].idPantalla);
+                printf("El nombre de la pantalla es: %s\n",pantallas[i].nombre);
+                printf("La direccion de la pantalla es: %s\n",pantallas[i].direccion);
+                printf("El precio de la pantalla es: %.2f\n",pantallas[i].precio);
+                printf("El tipo de la pantalla es: %d\n",pantallas[i].tipo);
+
+            }
+        }
+    }
+    return retorno;
+}
+
 
 
 

@@ -115,14 +115,18 @@ int main()
                 cont_alta(contrataciones,LEN_CONT,array,QTY);
                 break;
             case 8:
-                informar_OrdenarPantallasPorPrecio(array,QTY);
-                informar_ListarPantallas(array,QTY);
+                informar_OrdenarPantallasPorPrecioNombre(array,QTY);
+                pantalla_ListarPantallas(array,QTY);
                 break;
             case 9:
+                printf("||PANTALLAS MENORES E IGUALES 10:||\n");
                 informar_ListarPantallasMenoresIguales(array,QTY,10);
+                printf("\n\n||PANTALLAS MAYORES A 10:||\n");
+                informar_ListarPantallasMayores(array,QTY,10);
         }
 
     }while(menu != 10);
 
     return 0;
 }
+

@@ -22,6 +22,8 @@ int pantalla_modificacion(Pantalla* array,int limite, int id);
 int pantalla_ordenar(Pantalla* array,int limite, int orden);
 int pantalla_buscarPorId(Pantalla* array,int limite, int id);
 int pantalla_altaForzada(Pantalla* array,int limite,char* nombre,char* direccion, float precio, int tipo);
+int pantalla_ListarPantallas(Pantalla* pantallas,int lenPantallas);
+int pantalla_ImprimirPantallaUnica(Pantalla* pantallas,int lenPantallas,int indice);
 //int buscarLugarLibre(Pantalla* array,int limite);
 //int proximoId();
 //int pantalla_buscarPorId(Pantalla* array,int limite, int id);

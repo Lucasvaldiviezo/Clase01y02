@@ -4,7 +4,8 @@ int informar_ListarContrataciones(Contratacion* arrayC,int limite,
               Pantalla* pantallas, int lenPantallas);
 int informar_ListarCantidadContratacionesImporte(Contratacion* arrayC,int limite,
               Pantalla* pantallas, int lenPantallas);
-int informar_OrdenarPantallasPorPrecio(Pantalla* pantallas, int lenPantallas);
 
-int informar_ListarPantallas(Pantalla* pantallas,int lenPantallas);
+int informar_OrdenarPantallasPorPrecioNombre(Pantalla* pantallas, int lenPantallas);
 int informar_ListarPantallasMenoresIguales(Pantalla* pantallas,int lenPantallas, int valorComparativo);
+int informar_ListarPantallasMayores(Pantalla* pantallas,int lenPantallas, int valorComparativo);
+int informar_ListarPantallasMayoresPromedio(Pantalla* pantallas,int lenPantallas, int valorComparativo);
