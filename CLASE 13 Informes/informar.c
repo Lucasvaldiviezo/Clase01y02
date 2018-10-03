@@ -41,32 +41,29 @@ int informar_OrdenarPantallasPorPrecioNombre(Pantalla* pantallas, int lenPantall
 {
     int retorno=-1;
     int i;
-    int j;
+    int flagSwap;
     Pantalla auxiliar;
     if(lenPantallas > 0 && pantallas != NULL)
     {
-        for(i=0;i<lenPantallas-1;i++)
+        retorno=0;
+        do
         {
-            for(j=i+1;j<lenPantallas;j++)
+            flagSwap=0;
+            for(i=0;i<lenPantallas-1;i++)
             {
-                if(pantallas[i].precio < pantallas[j].precio)
+                if((pantallas[i].precio < pantallas[i+1].precio) ||
+                  (pantallas[i].precio == pantallas[i+1].precio && strcmp(pantallas[i].nombre,pantallas[i+1].nombre)>0))
                 {
+                    flagSwap=1;
                     auxiliar=pantallas[i];
-                    pantallas[i]=pantallas[j];
-                    pantallas[j]=auxiliar;
-                }
-                else if(pantallas[i].precio == pantallas[j].precio)
-                {
-                    if(strcmp(pantallas[i].nombre,pantallas[j].nombre)>0)
-                    {
-                        auxiliar=pantallas[i];
-                        pantallas[i]=pantallas[j];
-                        pantallas[j]=auxiliar;
-                    }
+                    pantallas[i]=pantallas[i+1];
+                    pantallas[i+1]=auxiliar;
                 }
             }
-        }
+        }while(flagSwap==1);
+
     }
+
     return retorno;
 }
 
