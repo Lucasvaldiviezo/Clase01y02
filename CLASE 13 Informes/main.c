@@ -23,12 +23,12 @@
 /*
 
 A. Realizar un solo listado de las pantallas ordenadas por los siguientes criterios:
-   o Precio (descendentemente)
-   o Nombre (ascendentemente)
+   o Precio (descendentemente) LISTO
+   o Nombre (ascendentemente) LISTO
 
-B.  Todas las pantallas que su valor es menor o igual a 10.
+B.  Todas las pantallas que su valor es menor o igual a 10. LISTO
 
-C.  Todas las pantallas que su valor es mayor a 10.
+C.  Todas las pantallas que su valor es mayor a 10. LISTO
 
 D.  Todas las pantallas que superan el promedio de los precios.
 

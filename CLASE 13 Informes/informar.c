@@ -113,34 +113,10 @@ int informar_ListarPantallasMayores(Pantalla* pantallas,int lenPantallas, int va
     }
     if(flag==0)
     {
-        printf("El precio de ninguna pantalla es menor o igual a: %d",valorComparativo);
+        printf("El precio de ninguna pantalla es mayor a: %d",valorComparativo);
     }
 
     return retorno;
 }
 
-int informar_ListarPantallasMayoresPromedio(Pantalla* pantallas,int lenPantallas, int valorComparativo)
-{
-    int retorno = -1;
-    int i;
-    int flag=0;
-    if(pantallas != NULL && lenPantallas > 0)
-    {
-        retorno=0;
-        for(i=0;i<lenPantallas;i++)
-        {
-            if(pantallas[i].isEmpty==0 && pantallas[i].precio > valorComparativo)
-            {
-                pantalla_ImprimirPantallaUnica(pantallas,lenPantallas,i);
-                flag=1;
-            }
-        }
 
-    }
-    if(flag==0)
-    {
-        printf("El precio de ninguna pantalla es menor o igual a: %d",valorComparativo);
-    }
-
-    return retorno;
-}
