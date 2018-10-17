@@ -14,6 +14,7 @@ typedef struct
 Empleado* empleado_new();
 Empleado* empleado_newConParametro(char* nombre, char* apellido,float altura);
 void empleado_delete(Empleado* this);//This se refiere al que le acabo de pasar
+void empleado_print(Empleado* this);
 
 int empleado_setNombre(Empleado* this,char* nombre);
 int empleado_getNombre(Empleado* this,char* nombre);//en este caso, el char nombre es donde le devolvemos el nombre
@@ -25,6 +26,7 @@ int empleado_setAltura(Empleado* this,float altura);
 int empleado_getAltura(Empleado* this,float* altura);//en este caso, el float de altura recibe un puntero para guardar esa altura a devolver
 
 int empleado_compareEmpleado(Empleado* thisA, Empleado* thisB);
+
 //vamos a tener el constructor(new)
 //el destructor(delete)
 //setNombre o Apellido: recibe un nombre y lo guarda en un empleado y valida si el nombre es correcto

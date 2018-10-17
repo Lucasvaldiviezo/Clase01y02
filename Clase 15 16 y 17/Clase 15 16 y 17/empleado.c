@@ -13,6 +13,22 @@ Empleado* empleado_new(void)
     return (Empleado*) malloc(sizeof(Empleado));
 }
 
+Empleado* empleado_newConParametro(char* nombre, char* apellido,float altura)
+{
+    Empleado* this = NULL;
+    this=empleado_new();
+    if( this == NULL ||
+        empleado_setNombre(this,nombre) ||
+        empleado_setApellido(this,apellido) ||
+        empleado_setAltura(this,altura))
+    {
+        empleado_delete(this);
+        this = NULL;
+    }
+
+    return this;
+}
+
 void empleado_delete(Empleado* this)
 {
     free(this);
@@ -117,5 +133,14 @@ static int isValidAltura(float altura)
 {
     int retorno=1;
     return retorno;
+}
+
+void empleado_print(Empleado* this)
+{
+    if(this != NULL)
+    {
+        printf("\n%s - %s - %f - %d ",this->nombre,this->apellido,this->altura,this->idEmpleado);
+    }
+
 }
 

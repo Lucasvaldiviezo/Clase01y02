@@ -1,8 +1,9 @@
 # depslib dependency file v1.0
-1539813182 source:/home/alumno/Escritorio/Clase01y02/Clase 15 16 y 17/Clase 15 16 y 17/main.c
+1539818850 source:/home/alumno/Escritorio/Clase01y02/Clase 15 16 y 17/Clase 15 16 y 17/main.c
 	<stdio.h>
 	<stdlib.h>
 	"utn.h"
+	"empleado.h"
 
 1539137032 /home/alumno/Escritorio/Clase01y02/Clase 15 16 y 17/Clase 15 16 y 17/utn.h
 
@@ -12,4 +13,13 @@
 	<string.h>
 	"utn.h"
 	<ctype.h>
+
+1539819073 source:/home/alumno/Escritorio/Clase01y02/Clase 15 16 y 17/Clase 15 16 y 17/empleado.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"empleado.h"
+	<ctype.h>
+
+1539817312 /home/alumno/Escritorio/Clase01y02/Clase 15 16 y 17/Clase 15 16 y 17/empleado.h
 
