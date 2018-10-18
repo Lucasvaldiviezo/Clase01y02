@@ -141,7 +141,7 @@ void empleado_print(Empleado* this)
 {
     if(this != NULL)
     {
-        printf("\n%s - %s - %f - %d ",this->nombre,this->apellido,this->altura,this->idEmpleado);
+        printf("\n%s - %s - %f - %d - %p ",this->nombre,this->apellido,this->altura,this->idEmpleado,this);
     }
 
 }

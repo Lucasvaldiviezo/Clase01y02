@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1539825648 source:/home/alumno/Escritorio/Clase01y02/Clase 15 16 y 17/Clase 15 16 y 17/main.c
+1539825801 source:/home/alumno/Escritorio/Clase01y02/Clase 15 16 y 17/Clase 15 16 y 17/main.c
 	<stdio.h>
 	<stdlib.h>
 	"utn.h"
@@ -15,7 +15,7 @@
 	"utn.h"
 	<ctype.h>
 
-1539825508 source:/home/alumno/Escritorio/Clase01y02/Clase 15 16 y 17/Clase 15 16 y 17/empleado.c
+1539901468 source:/home/alumno/Escritorio/Clase01y02/Clase 15 16 y 17/Clase 15 16 y 17/empleado.c
 	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
