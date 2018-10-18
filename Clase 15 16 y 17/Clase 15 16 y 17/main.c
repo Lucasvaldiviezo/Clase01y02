@@ -36,7 +36,7 @@ int main()
     }
     listaEmpleados[i] = empleado_newConParametro("AAAAA","Perez",1.45);
     qtyEmpleados++;
-    ordenar(listaEmpleados,qtyEmpleados,empleado_compareNombre);
+    ordenar((void*)listaEmpleados,qtyEmpleados,empleado_compareNombre);
     for(i=0;i<qtyEmpleados;i++)
     {
         empleado_print(listaEmpleados[i]);
