@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1539818850 source:/home/alumno/Escritorio/Clase01y02/Clase 15 16 y 17/Clase 15 16 y 17/main.c
+1539825435 source:/home/alumno/Escritorio/Clase01y02/Clase 15 16 y 17/Clase 15 16 y 17/main.c
 	<stdio.h>
 	<stdlib.h>
 	"utn.h"
 	"empleado.h"
+	"service.h"
 
 1539137032 /home/alumno/Escritorio/Clase01y02/Clase 15 16 y 17/Clase 15 16 y 17/utn.h
 
@@ -14,12 +15,30 @@
 	"utn.h"
 	<ctype.h>
 
-1539819073 source:/home/alumno/Escritorio/Clase01y02/Clase 15 16 y 17/Clase 15 16 y 17/empleado.c
+1539825508 source:/home/alumno/Escritorio/Clase01y02/Clase 15 16 y 17/Clase 15 16 y 17/empleado.c
 	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
 	"empleado.h"
 	<ctype.h>
 
-1539817312 /home/alumno/Escritorio/Clase01y02/Clase 15 16 y 17/Clase 15 16 y 17/empleado.h
+1539825410 /home/alumno/Escritorio/Clase01y02/Clase 15 16 y 17/Clase 15 16 y 17/empleado.h
+
+1539823949 source:/home/alumno/Escritorio/Clase01y02/Clase 15 16 y 17/Clase 15 16 y 17/service.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"service.h"
+	<ctype.h>
+
+1539823884 /home/alumno/Escritorio/Clase01y02/Clase 15 16 y 17/Clase 15 16 y 17/service.h
+
+1539824441 source:/home/alumno/Escritorio/Clase01y02/Clase 15 16 y 17/Clase 15 16 y 17/user.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"user.h"
+	<ctype.h>
+
+1539824402 /home/alumno/Escritorio/Clase01y02/Clase 15 16 y 17/Clase 15 16 y 17/user.h
 

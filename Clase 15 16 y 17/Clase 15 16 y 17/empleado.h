@@ -25,7 +25,7 @@ int empleado_getApellido(Empleado* this,char* apellido);//en este caso, el char 
 int empleado_setAltura(Empleado* this,float altura);
 int empleado_getAltura(Empleado* this,float* altura);//en este caso, el float de altura recibe un puntero para guardar esa altura a devolver
 
-int empleado_compareEmpleado(Empleado* thisA, Empleado* thisB);
+int empleado_compareNombre(void* thisA, void* thisB);
 
 //vamos a tener el constructor(new)
 //el destructor(delete)
