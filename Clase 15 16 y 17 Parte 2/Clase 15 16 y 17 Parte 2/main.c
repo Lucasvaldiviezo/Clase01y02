@@ -8,16 +8,18 @@ int main()
 {
     Cliente* listaClientes[CANT_CLIENTES];
     Cliente* auxCliente;
-    int i;
-    for(i=0;i<CANT_CLIENTES;i++)
-    {
-        listaClientes[i]=NULL;
-    }
+    char nombreAux[64];
+    int indexVacio;
+
+    cliente_inicializarArray(listaClientes,CANT_CLIENTES);
     auxCliente=cliente_new();
+    indexVacio=cliente_buscarLugarVacio(listaClientes,CANT_CLIENTES);
     if(auxCliente!=NULL)
     {
         cliente_setNombre(auxCliente,"Juan");
-        listaClientes[0]=auxCliente;
+        listaClientes[indexVacio]=auxCliente;
+        cliente_getNombre(listaClientes[indexVacio],nombreAux);
+        printf("%s",nombreAux);
     }
     return 0;
 }

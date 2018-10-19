@@ -15,4 +15,6 @@ int cliente_setApellido(Cliente* this,char* ape);
 int cliente_getApellido(Cliente* this,char* ape);
 int cliente_setId(Cliente* this,int idCliente);
 int cliente_getId(Cliente* this,int* idCliente);
+int cliente_buscarLugarVacio(Cliente* arrayCliente[], int limite);
+int cliente_inicializarArray(Cliente* arrayCliente[], int limite);
 #endif // CLIENTE_H_INCLUDED

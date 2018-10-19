@@ -94,3 +94,38 @@ static int isValidId(int clienteId)
 {
     return 1;
 }
+
+int cliente_buscarLugarVacio(Cliente* arrayCliente[], int limite)
+{
+    int retorno=-1;
+    int i;
+    if(arrayCliente != NULL)
+    {
+        for(i=0;i<limite;i++)
+        {
+            if(arrayCliente[i] == NULL)
+            {
+                retorno=i;
+                break;
+            }
+        }
+    }
+    return retorno;
+}
+
+int cliente_inicializarArray(Cliente* arrayCliente[], int limite)
+{
+    int retorno=-1;
+    int i;
+    if(arrayCliente!=NULL)
+    {
+        retorno=0;
+        for(i=0;i<limite;i++)
+        {
+            arrayCliente[i]=NULL;
+        }
+    }
+
+
+    return retorno;
+}
