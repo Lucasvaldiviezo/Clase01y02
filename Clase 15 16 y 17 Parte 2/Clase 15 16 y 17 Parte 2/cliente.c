@@ -10,6 +10,31 @@ Cliente* cliente_new(void)
 {
     return (Cliente*) malloc(sizeof(Cliente));
 }
+Cliente* cliente_newConParametros(char* nombre, char* apellido,int clienteId)
+{
+    Cliente* p;
+    p=cliente_new();
+    if(p!=NULL)
+    {
+        if( cliente_setNombre(p,nombre)==-1 ||
+            cliente_setApellido(p,apellido) ==-1 ||
+            cliente_setId(p,clienteId)==-1)
+        {
+            cliente_delete(p);
+        }
+    }
+    return p;
+}
+int cliente_delete(Cliente* this)
+{
+    int retorno=-1;
+    if(this!=NULL)
+    {
+        free(this);
+        retorno=0;
+    }
+    return retorno;
+}
 
 int cliente_setNombre(Cliente* this,char* nom)
 {
@@ -127,5 +152,25 @@ int cliente_inicializarArray(Cliente* arrayCliente[], int limite)
     }
 
 
+    return retorno;
+}
+
+int cliente_buscarPorId(Cliente* arrayCliente[], int limite, int clienteId)
+{
+    int retorno=-1;
+    int i;
+    Cliente* auxCliente;
+    if(arrayCliente!=NULL)
+    {
+        for(i=0;i<limite;i++)
+        {
+            auxCliente=arrayCliente[i];
+            if(auxCliente!=NULL && auxCliente->clienteId == clienteId)
+            {
+                retorno=i;
+                break;
+            }
+        }
+    }
     return retorno;
 }
