@@ -1,5 +1,24 @@
 # depslib dependency file v1.0
-1540421284 source:/home/alumno/Escritorio/Clase01y02/Clase 18/Clase 18/main.c
+1540423356 source:/home/alumno/Escritorio/Clase01y02/Clase 18/Clase 18/main.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
+	"cliente.h"
+
+1540418254 source:/home/alumno/Escritorio/Clase01y02/Clase 18/Clase 18/cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"cliente.h"
+
+1540426051 /home/alumno/Escritorio/Clase01y02/Clase 18/Clase 18/cliente.h
+
+1540418254 source:/home/alumno/Escritorio/Clase01y02/Clase 18/Clase 18/utn.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	<ctype.h>
+
+1540418254 /home/alumno/Escritorio/Clase01y02/Clase 18/Clase 18/utn.h
 

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "cliente.h"
 
 int main()
 {
@@ -25,9 +26,10 @@ int main()
     {
         while(!feof(pArchivo))
         {
-            strcpy(bufferApellido,"----------------");
+            //strcpy(bufferApellido,"----------------");
             fscanf(pArchivo,"%[^,],%[^,],%[^\n]\n",bufferId,bufferNombre,bufferApellido);
             printf("%s - %s - %s\n",bufferId,bufferNombre,bufferApellido);
+
         }
 
         fclose(pArchivo);
