@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1540423356 source:/home/alumno/Escritorio/Clase01y02/Clase 18/Clase 18/main.c
+1540429986 source:/home/alumno/Escritorio/Clase01y02/Clase 18/Clase 18/main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"cliente.h"
 
-1540418254 source:/home/alumno/Escritorio/Clase01y02/Clase 18/Clase 18/cliente.c
+1540426328 source:/home/alumno/Escritorio/Clase01y02/Clase 18/Clase 18/cliente.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
