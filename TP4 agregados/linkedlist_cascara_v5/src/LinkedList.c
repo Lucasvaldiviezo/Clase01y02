@@ -3,7 +3,7 @@
 #include <string.h>
 #include "../inc/LinkedList.h"
 
-static Node* StartNextNode;
+
 static Node* getNode(LinkedList* this, int nodeIndex);
 static int addNode(LinkedList* this, int nodeIndex,void* pElement);
 
@@ -627,14 +627,14 @@ void ll_startIterate(LinkedList* this)
 {
     if(this != NULL)
     {
-        StartNextNode=this->pFirstNode;    }
+        this->startNextNode=this->pFirstNode;    }
 
 }
 
-void* ll_getNext()
+void* ll_getNext(LinkedList* this)
 {
-    static void* returnAux;
-    returnAux=StartNextNode->pElement;
-    StartNextNode=StartNextNode->pNextNode;
+    void* returnAux;
+    returnAux=this->startNextNode->pElement;
+    this->startNextNode=this->startNextNode->pNextNode;
     return returnAux;
 }

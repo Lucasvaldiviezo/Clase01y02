@@ -52,7 +52,9 @@ void testFilter(void)
 void testStarNext(void)
 {
     LinkedList* test;
+    LinkedList* test2;
     test=ll_newLinkedList();
+    test2=ll_newLinkedList();
     Employee* auxEmployee;
     int i;
     if(test != NULL)
@@ -63,10 +65,25 @@ void testStarNext(void)
             auxEmployee=newEmployee(i,"Carlitos","Andromeda",6995+i,i);
             ll_add(test,auxEmployee);
         }
-        ll_startIterate(test);
         for(i=0;i<CANT_EMPLEADOS;i++)
         {
-            auxEmployee=ll_getNext();
+            auxEmployee=newEmployee(i,"Perez","Antonio",10+i,i);
+            ll_add(test2,auxEmployee);
+        }
+        ll_startIterate(test);
+        ll_startIterate(test2);
+        for(i=0;i<CANT_EMPLEADOS;i++)
+        {
+            auxEmployee=ll_getNext(test);
+            if(auxEmployee!=NULL)
+            {
+                printf("Nombre: %s,Sueldo: %.2f\n",auxEmployee->name,auxEmployee->salary);
+            }
+
+        }
+        for(i=0;i<CANT_EMPLEADOS;i++)
+        {
+            auxEmployee=ll_getNext(test2);
             if(auxEmployee!=NULL)
             {
                 printf("Nombre: %s,Sueldo: %.2f\n",auxEmployee->name,auxEmployee->salary);
