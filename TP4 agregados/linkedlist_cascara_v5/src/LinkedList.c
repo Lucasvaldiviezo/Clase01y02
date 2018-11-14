@@ -634,7 +634,36 @@ void ll_startIterate(LinkedList* this)
 void* ll_getNext(LinkedList* this)
 {
     void* returnAux;
-    returnAux=this->startNextNode->pElement;
-    this->startNextNode=this->startNextNode->pNextNode;
+    returnAux=this->startNextNode;
+    if(this->startNextNode != NULL)
+    {
+        this->startNextNode=this->startNextNode->pNextNode;
+    }
+    return returnAux;
+}
+
+int ll_map(LinkedList* this,int (*pFunc)(void*))
+{
+    Node* pNode;
+    void* pElement;
+    int returnAux=-1;
+    if(this != NULL && pFunc != NULL)
+    {
+        returnAux=0;
+        ll_startIterate(this);
+        do
+        {
+            pNode=ll_getNext(this);
+            if(pNode == NULL)
+            {
+                break;
+            }
+            pElement=pNode->pElement;
+            if(pFunc(pElement)==0)
+            {
+                returnAux=0;
+            }
+        }while(pNode!=NULL);
+    }
     return returnAux;
 }

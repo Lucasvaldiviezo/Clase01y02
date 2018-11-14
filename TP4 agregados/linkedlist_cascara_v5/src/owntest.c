@@ -28,7 +28,7 @@ void testFilter(void)
             auxEmployee=ll_get(test,i);
             printf("Nombre: %s,Sueldo: %.2f\n",auxEmployee->name,auxEmployee->salary);
         }
-        newTest=ll_filter(test,compareEmployee2,1);
+        newTest=ll_filter(test,filterEmployee,1);
         if(newTest!=NULL)
         {
             size=ll_len(newTest);
@@ -56,6 +56,7 @@ void testStarNext(void)
     test=ll_newLinkedList();
     test2=ll_newLinkedList();
     Employee* auxEmployee;
+    Node* pNode;
     int i;
     if(test != NULL)
     {
@@ -74,7 +75,8 @@ void testStarNext(void)
         ll_startIterate(test2);
         for(i=0;i<CANT_EMPLEADOS;i++)
         {
-            auxEmployee=ll_getNext(test);
+            pNode=ll_getNext(test);
+            auxEmployee=pNode->pElement;
             if(auxEmployee!=NULL)
             {
                 printf("Nombre: %s,Sueldo: %.2f\n",auxEmployee->name,auxEmployee->salary);
@@ -83,13 +85,47 @@ void testStarNext(void)
         }
         for(i=0;i<CANT_EMPLEADOS;i++)
         {
-            auxEmployee=ll_getNext(test2);
+            pNode=ll_getNext(test2);
+            auxEmployee=pNode->pElement;
             if(auxEmployee!=NULL)
             {
                 printf("Nombre: %s,Sueldo: %.2f\n",auxEmployee->name,auxEmployee->salary);
             }
 
         }
+    }
+
+}
+
+void testMap(void)
+{
+    LinkedList* test;
+    test=ll_newLinkedList();
+    Employee* auxEmployee;
+    Node* pNode;
+    int i;
+    if(test != NULL)
+    {
+        printf("La lista es: \n");
+        for(i=0;i<CANT_EMPLEADOS;i++)
+        {
+            auxEmployee=newEmployee(i,"Carlitos","Andromeda",6995+i,i);
+            ll_add(test,auxEmployee);
+        }
+        if(ll_map(test,payRiseEmployee)==0)
+        {
+            ll_startIterate(test);
+            for(i=0;i<CANT_EMPLEADOS;i++)
+            {
+                pNode=ll_getNext(test);
+                auxEmployee=pNode->pElement;
+                if(auxEmployee!=NULL)
+                {
+                    printf("Nombre: %s,Sueldo: %.2f\n",auxEmployee->name,auxEmployee->salary);
+                }
+            }
+        }
+
     }
 
 }

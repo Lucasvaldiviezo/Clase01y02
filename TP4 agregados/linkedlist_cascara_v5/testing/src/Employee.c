@@ -19,18 +19,33 @@ int compareEmployee(void* pEmployeeA,void* pEmployeeB)
 
 }
 
-int compareEmployee2(void* pEmployeeA)
+int filterEmployee(void* pEmployee)
 {
 
-    if(((Employee*)pEmployeeA)->salary > 7000)
+    if(((Employee*)pEmployee)->salary > 7000)
     {
         return 1;
     }
-    if(((Employee*)pEmployeeA)->salary < 7000)
+    if(((Employee*)pEmployee)->salary < 7000)
     {
         return -1;
     }
     return 0;
+}
+
+int payRiseEmployee(void* pEmployee)
+{
+    int returnAux=-1;
+    if(pEmployee != NULL && ((Employee*)pEmployee)->salary < 7000)
+    {
+        ((Employee*)pEmployee)->salary=50000;
+        returnAux=0;
+    }else if(pEmployee != NULL && ((Employee*)pEmployee)->salary > 7000)
+    {
+        ((Employee*)pEmployee)->salary=30000;
+        returnAux=0;
+    }
+    return returnAux;
 }
 
 void printEmployee(Employee* p)
