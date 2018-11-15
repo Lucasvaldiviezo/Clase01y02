@@ -13,7 +13,7 @@ int parser_parseEmpleados(char* fileName, LinkedList* listaEmpleados)
     char* delim=",";
     char* delim2="\n";
     int valueF;
-    int contador=0;
+    int contadorEntradas=0;
     char line[1024];
     Empleado* auxiliarPunteroEmployee;
     FILE* pFile;
@@ -29,20 +29,19 @@ int parser_parseEmpleados(char* fileName, LinkedList* listaEmpleados)
                 break;
             }
 
-            printf("Entrada numero: %d\n",contador);
-            contador++;
             tokenId=strtok(line, delim);
             tokenNombre=strtok(NULL, delim);
             tokenHorasTrabajadas=strtok(NULL, delim2);
             auxiliarPunteroEmployee=empleado_newParametros(tokenId,tokenNombre,tokenHorasTrabajadas);
             if(auxiliarPunteroEmployee!=NULL)
             {
-                printf("ENTRE ACA!!!!\n");
+                contadorEntradas++;
                 ll_add(listaEmpleados,auxiliarPunteroEmployee);
                 retorno=0;
             }
 
         }
+        printf("Se cargaron %d empleados. \n",contadorEntradas);
     }
     fclose(pFile);
     return retorno;

@@ -33,6 +33,6 @@ int empleado_buscarPorId(LinkedList* pArrayEmpleado, int empleadoId);
 int empleado_criterioNombre(void* thisA,void* thisB);
 int empleado_guardarTexto(LinkedList* pArrayEmpleado, char* path);
 int empleado_guardarBinario(LinkedList* pArrayEmpleado,char* path);
-void em_calcularSueldo(void* p);
+int em_calcularSueldo(void* p);
 
 #endif // EMPLEADO_H_INCLUDED

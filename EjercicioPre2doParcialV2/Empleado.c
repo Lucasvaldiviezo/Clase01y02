@@ -527,7 +527,23 @@ int empleado_guardarBinario(LinkedList* pArrayEmpleado,char* path)
     return retorno;
 }
 
-void em_calcularSueldo(void* p)
+int em_calcularSueldo(void* p)
 {
-
+    int retorno=-1;
+    if(p != NULL && ((Empleado*)p)->horasTrabajadas < 120  )
+    {
+        ((Empleado*)p)->sueldo=180;
+        retorno=0;
+    }
+    else if(p != NULL && ((Empleado*)p)->horasTrabajadas >= 120 && ((Empleado*)p)->horasTrabajadas < 160 )
+    {
+        ((Empleado*)p)->sueldo=240;
+        retorno=0;
+    }
+    else if(p != NULL && ((Empleado*)p)->horasTrabajadas >= 160 && ((Empleado*)p)->horasTrabajadas <= 240 )
+    {
+        ((Empleado*)p)->sueldo=350;
+        retorno=0;
+    }
+    return retorno;
 }
