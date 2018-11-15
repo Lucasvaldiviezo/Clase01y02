@@ -28,7 +28,7 @@ Empleado* empleado_new(void)
     @param sueldoStr: cadena de caracteres con el sueldo a guardar
     @return direccion de memoria creada.
 */
-Empleado* empleado_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr,char* sueldoStr)
+Empleado* empleado_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr)
 {
     Empleado* p;
     p=empleado_new();
@@ -315,7 +315,6 @@ int empleado_alta(LinkedList* arrayEmpleado)
     int auxHorasTrabajadas;
     int auxSueldo;
     char bufferHorasTrabajadas[1024];
-    char bufferSueldo[1024];
     Empleado* auxiliarPunteroEmpleado;
 
     if( utn_getNombre(bufferNombre,"Ingrese el nombre del empleado: ","Ese no es un nombre")==0 &&
@@ -323,9 +322,7 @@ int empleado_alta(LinkedList* arrayEmpleado)
         utn_getEnteroSinLimites(&auxSueldo,10,"Ingrese el sueldo del empleado: ","Ese no es un numero")==0)
     {
         sprintf(bufferHorasTrabajadas,"%d",auxHorasTrabajadas);
-        sprintf(bufferSueldo,"%d",auxSueldo);
-        printf("%s",bufferSueldo);
-        auxiliarPunteroEmpleado=empleado_newParametros(bufferId,bufferNombre,bufferHorasTrabajadas,bufferSueldo);
+        auxiliarPunteroEmpleado=empleado_newParametros(bufferId,bufferNombre,bufferHorasTrabajadas);
         if(auxiliarPunteroEmpleado!=NULL)
         {
             ll_add(arrayEmpleado,auxiliarPunteroEmpleado);

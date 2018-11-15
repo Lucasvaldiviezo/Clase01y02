@@ -10,7 +10,7 @@ struct S_Empleado
 };
 typedef struct S_Empleado Empleado;
 Empleado* empleado_new();
-Empleado* empleado_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr,char* sueldoStr);
+Empleado* empleado_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr);
 int empleado_delete(Empleado* this);
 
 int empleado_setId(Empleado* this,char* id);

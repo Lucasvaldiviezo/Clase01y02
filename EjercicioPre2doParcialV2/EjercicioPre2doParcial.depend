@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1542243220 source:/home/alumno/Escritorio/Clase01y02/EjercicioPre2doParcialV2/Empleado.c
+1542321678 source:/home/alumno/Escritorio/Clase01y02/EjercicioPre2doParcialV2/Empleado.c
 	"Empleado.h"
 	<stdio_ext.h>
 	<stdlib.h>
@@ -9,7 +9,7 @@
 	"Empleado.h"
 	"utn.h"
 
-1542242513 /home/alumno/Escritorio/Clase01y02/EjercicioPre2doParcialV2/Empleado.h
+1542318047 /home/alumno/Escritorio/Clase01y02/EjercicioPre2doParcialV2/Empleado.h
 	"LinkedList.h"
 
 1542240449 /home/alumno/Escritorio/Clase01y02/EjercicioPre2doParcialV2/LinkedList.h
@@ -22,8 +22,12 @@
 	<string.h>
 	"LinkedList.h"
 
-1542242570 source:/home/alumno/Escritorio/Clase01y02/EjercicioPre2doParcialV2/Parser.c
+1542321694 source:/home/alumno/Escritorio/Clase01y02/EjercicioPre2doParcialV2/Parser.c
+	<stdio.h>
+	<stdlib.h>
+	"Empleado.h"
 	"LinkedList.h"
+	<string.h>
 
 1541720502 source:/home/alumno/Escritorio/Clase01y02/EjercicioPre2doParcialV2/utn.c
 	<stdio_ext.h>
@@ -32,7 +36,7 @@
 	"utn.h"
 	<ctype.h>
 
-1542243119 source:/home/alumno/Escritorio/Clase01y02/EjercicioPre2doParcialV2/main.c
+1542321713 source:/home/alumno/Escritorio/Clase01y02/EjercicioPre2doParcialV2/main.c
 	<stdio.h>
 	<stdlib.h>
 	"Empleado.h"
