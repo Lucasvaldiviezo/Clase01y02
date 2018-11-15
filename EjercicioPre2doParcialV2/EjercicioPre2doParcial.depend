@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1542243220 source:/home/alumno/Escritorio/Clase01y02/EjercicioPre2doParcialV2/Empleado.c
+	"Empleado.h"
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"LinkedList.h"
+	"Empleado.h"
+	"utn.h"
+
+1542242513 /home/alumno/Escritorio/Clase01y02/EjercicioPre2doParcialV2/Empleado.h
+	"LinkedList.h"
+
+1542240449 /home/alumno/Escritorio/Clase01y02/EjercicioPre2doParcialV2/LinkedList.h
+
+1541720502 /home/alumno/Escritorio/Clase01y02/EjercicioPre2doParcialV2/utn.h
+
+1542242551 source:/home/alumno/Escritorio/Clase01y02/EjercicioPre2doParcialV2/LinkedList.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1542242570 source:/home/alumno/Escritorio/Clase01y02/EjercicioPre2doParcialV2/Parser.c
+	"LinkedList.h"
+
+1541720502 source:/home/alumno/Escritorio/Clase01y02/EjercicioPre2doParcialV2/utn.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	<ctype.h>
+
+1542243119 source:/home/alumno/Escritorio/Clase01y02/EjercicioPre2doParcialV2/main.c
+	<stdio.h>
+	<stdlib.h>
+	"Empleado.h"
+	"LinkedList.h"
+	"Parser.h"
+	"utn.h"
+
+1542242579 /home/alumno/Escritorio/Clase01y02/EjercicioPre2doParcialV2/Parser.h
+	"LinkedList.h"
+
