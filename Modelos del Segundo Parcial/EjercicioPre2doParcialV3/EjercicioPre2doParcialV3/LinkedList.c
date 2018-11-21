@@ -599,20 +599,22 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
 
 }
 
-LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void*),int judgement)
+LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void*))
 {
     LinkedList* filteredArray=NULL;
     filteredArray=ll_newLinkedList();
     void* pElement;
     int i;
     int size=ll_len(this);
-    if(this != NULL && pFunc != NULL && (judgement==0 || judgement==1))
+    if(this != NULL && pFunc != NULL)
     {
+        printf("Entre 1\n");
         for(i=0;i<size;i++)
         {
             pElement=ll_get(this,i);
-            if((pFunc(pElement)== -1 && judgement==0) || (pFunc(pElement)== 1 && judgement==1))
+            if(pFunc(pElement)== -1 || pFunc(pElement)== 1)
             {
+                printf("Entre 2\n");
                 ll_add(filteredArray,pElement);
             }
         }
@@ -670,6 +672,7 @@ int ll_map(LinkedList* this,int (*pFunc)(void*))
         ll_startIterate(this);
         do
         {
+
             pNode=ll_getNext(this);
             if(pNode == NULL)
             {
@@ -683,5 +686,29 @@ int ll_map(LinkedList* this,int (*pFunc)(void*))
         }while(pNode!=NULL);
     }
     return returnAux;
+}
+
+LinkedList* ll_filterVariableComparadoraInt(LinkedList* this,int compararVariable,int (*pFunc)(void*,int))
+{
+    LinkedList* filteredArray=NULL;
+    filteredArray=ll_newLinkedList();
+    void* pElement;
+    int i;
+    int size=ll_len(this);
+    if(this != NULL && pFunc != NULL)
+    {
+        for(i=0;i<size;i++)
+        {
+            pElement=ll_get(this,i);
+            if(pFunc(pElement,compararVariable)== -1 || pFunc(pElement,compararVariable)== 1)
+            {
+                ll_add(filteredArray,pElement);
+            }
+        }
+    }else
+    {
+        filteredArray=NULL;
+    }
+    return filteredArray;
 }
 

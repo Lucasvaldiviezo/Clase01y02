@@ -54,9 +54,10 @@ int ll_containsAll(LinkedList* this,LinkedList* this2);
 LinkedList* ll_subList(LinkedList* this,int from,int to);
 LinkedList* ll_clone(LinkedList* this);
 int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order);
-LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void*),int judgement);
+LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void*));
 void ll_startIterate(LinkedList* this);
 void* ll_getNext(LinkedList* this);
 int ll_map(LinkedList* this,int (*pFunc)(void*));
 void* ll_startFrom(LinkedList* this,int nodeIndex);
+LinkedList* ll_filterVariableComparadoraInt(LinkedList* this,int compararVariable,int (*pFunc)(void*,int));
 

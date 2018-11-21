@@ -52,7 +52,6 @@ int Compra_setNombreCliente(Compra* this,char* nombreCliente)
         strcpy(this->nombreCliente,nombreCliente);
         retorno=0;
     }
-    printf("El retorno de nombre es: %d\n",retorno);
     return retorno;
 }
 
@@ -98,7 +97,6 @@ int Compra_setIdProducto(Compra* this,char* idProducto)
         this->idProducto=atoi(idProducto);
         retorno=0;
     }
-    printf("El retorno de Id es: %d\n",retorno);
     return retorno;
 }
 
@@ -144,7 +142,6 @@ int Compra_setPrecioUnitario(Compra* this,char* precioUnitario)
         this->precioUnitario=atof(precioUnitario);
         retorno=0;
     }
-    printf("El retorno de Precio unitario es: %d\n",retorno);
     return retorno;
 }
 
@@ -190,7 +187,6 @@ int Compra_setUnidades(Compra* this,char* unidades)
         this->unidades=atoi(unidades);
         retorno=0;
     }
-        printf("El retorno de unidades es: %d\n",retorno);
     return retorno;
 }
 
@@ -229,7 +225,6 @@ int Compra_setIva(Compra* this,char* iva)
         this->iva=atof(iva);
         retorno=0;
     }
-        printf("El retorno de Iva es: %d\n",retorno);
     return retorno;
 }
 
@@ -276,7 +271,6 @@ int Compra_setMontoTotal(Compra* this,char* montoTotal)
         this->montoTotal=atof(montoTotal);
         retorno=0;
     }
-        printf("El retorno de monto total es: %d\n",retorno);
     return retorno;
 }
 
@@ -335,16 +329,44 @@ int compra_buscarPorId(LinkedList* listaCompras, int idProducto)
     return retorno;
 }
 
-int compras_ProductoSeleccionado(void* pProducto,void* idProducto)
+int compra_productoSeleccionado(void* pProducto,int idProducto)
+{
+    int retorno=0;
+    if(pProducto != NULL && idProducto >=0)
+    {
+        if(((Compra*)pProducto)->idProducto == idProducto)
+        {
+            retorno=1;
+        }
+    }
+    return retorno;
+}
+
+int compra_imprimirProducto(void* pProducto)
 {
     int retorno=-1;
-
-    if(((Compra*)pProducto)->idProducto == idProducto)
+    if(pProducto != NULL)
     {
+        printf("El cliente que compro el producto %d es: %s \n",((Compra*)pProducto)->idProducto,((Compra*)pProducto)->nombreCliente);
         retorno=0;
     }
     return retorno;
-
-
 }
 
+int compra_calcularMontoTotal(void* pElement)
+{
+    int retorno=-1;
+    float montoTotal;
+    float iva;
+    float montoConIva;
+
+    if(pElement!=NULL)
+    {
+        montoTotal=((Compra*)pElement)->precioUnitario * ((Compra*)pElement)->unidades;
+        iva=montoTotal*((Compra*)pElement)->iva/100;
+        montoConIva=montoTotal+iva;
+        ((Compra*)pElement)->montoTotal=montoConIva;
+        retorno=0;
+    }
+    return retorno;
+}

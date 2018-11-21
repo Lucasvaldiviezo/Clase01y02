@@ -37,5 +37,8 @@ int Compra_setMontoTotal(Compra* this,char* montoTotal);
 int Compra_getMontoTotal(Compra* this,float* montoTotal);
 
 int compra_buscarPorId(LinkedList* listaCompras, int idProducto);
+int compra_productoSeleccionado(void* pProducto,int idProducto);
+int compra_imprimirProducto(void* pProducto);
+int compra_calcularMontoTotal(void* pElement);
 
 #endif // COMPRA_H_INCLUDED

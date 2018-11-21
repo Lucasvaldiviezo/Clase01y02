@@ -26,12 +26,9 @@ int main()
 {
     // Definir lista de compras
     LinkedList* listaCompras;
-    LinkedList* listaFiltrada;
     listaCompras=ll_newLinkedList();
+    LinkedList* filteredList;
     int id;
-
-
-
     // Crear lista compras
     //...
 
@@ -42,17 +39,23 @@ int main()
         printf("Ingrese id de producto:");
         if(utn_getEnteroSinLimites(&id,10," ","Ese no es un numero valido")==0 && compra_buscarPorId(listaCompras,id)!=-1)
         {
+            filteredList=ll_filterVariableComparadoraInt(listaCompras,id,compra_productoSeleccionado);
+            //ll_map(filteredList,compra_imprimirProducto);
              // Calcular montos
-             printf("Calculando montos totales...\n");
+            if(ll_map(filteredList,compra_calcularMontoTotal)==0)
+            {
+                printf("Calculando montos totales...\n");
         //TODO
 
             // Generar archivo de salida
-            if(generarArchivoInforme("informe.csv",listaFiltrada)==1)
-            {
-                printf("Archivo generado correctamente\n");
+                if(generarArchivoInforme("informe.csv",filteredList)==0)
+                {
+                    printf("Archivo generado correctamente\n");
+                }
+                else
+                    printf("Error generando archivo\n");
             }
-            else
-                printf("Error generando archivo\n");
+
 
         }else
         {
@@ -71,5 +74,23 @@ int main()
 
 int generarArchivoInforme(char* fileName,LinkedList* listaCompras)
 {
+    int retorno=-1;
+    int i;
+    int limite;
+    FILE* pFile;
+    pFile=fopen(fileName,"w");
+    limite=ll_len(listaCompras);
+    Compra* auxCompra;
+    if(pFile !=NULL)
+    {
+        retorno=0;
+        for(i=0;i<limite;i++)
+        {
+            auxCompra=ll_get(listaCompras,i);
+            fprintf(pFile,"%s,%d,%.2f,%d,%.2f,%.2f\n",auxCompra->nombreCliente,auxCompra->idProducto,auxCompra->precioUnitario,auxCompra->unidades,auxCompra->iva,auxCompra->montoTotal);
+        }
+    }
+    fclose(pFile);
+    return retorno;
     return 1;
 }

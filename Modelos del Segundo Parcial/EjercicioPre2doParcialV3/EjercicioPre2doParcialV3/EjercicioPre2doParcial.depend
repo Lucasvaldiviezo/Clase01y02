@@ -1,13 +1,13 @@
 # depslib dependency file v1.0
-1542242551 source:/home/alumno/Escritorio/Clase01y02/Modelos del Segundo Parcial/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/LinkedList.c
+1542841983 source:/home/alumno/Escritorio/Clase01y02/Modelos del Segundo Parcial/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/LinkedList.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"LinkedList.h"
 
-1542330340 /home/alumno/Escritorio/Clase01y02/Modelos del Segundo Parcial/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/LinkedList.h
+1542841641 /home/alumno/Escritorio/Clase01y02/Modelos del Segundo Parcial/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/LinkedList.h
 
-1542329673 source:/home/alumno/Escritorio/Clase01y02/Modelos del Segundo Parcial/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/main.c
+1542843504 source:/home/alumno/Escritorio/Clase01y02/Modelos del Segundo Parcial/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/main.c
 	<stdio.h>
 	<stdlib.h>
 	"Compra.h"
@@ -15,13 +15,13 @@
 	"Parser.h"
 	"utn.h"
 
-1542329645 /home/alumno/Escritorio/Clase01y02/Modelos del Segundo Parcial/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/Compra.h
+1542842934 /home/alumno/Escritorio/Clase01y02/Modelos del Segundo Parcial/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/Compra.h
 	"LinkedList.h"
 
 1542236626 /home/alumno/Escritorio/Clase01y02/Modelos del Segundo Parcial/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/Parser.h
 	"LinkedList.h"
 
-1542328368 source:/home/alumno/Escritorio/Clase01y02/Modelos del Segundo Parcial/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/Parser.c
+1542836116 source:/home/alumno/Escritorio/Clase01y02/Modelos del Segundo Parcial/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/Parser.c
 	<stdio_ext.h>
 	<stdlib.h>
 	"Compra.h"
@@ -39,7 +39,7 @@
 
 1541720502 /home/alumno/Escritorio/Clase01y02/Modelos del Segundo Parcial/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/utn.h
 
-1542329651 source:/home/alumno/Escritorio/Clase01y02/Modelos del Segundo Parcial/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/Compra.c
+1542842935 source:/home/alumno/Escritorio/Clase01y02/Modelos del Segundo Parcial/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/Compra.c
 	<stdio_ext.h>
 	<stdlib.h>
 	"Compra.h"
