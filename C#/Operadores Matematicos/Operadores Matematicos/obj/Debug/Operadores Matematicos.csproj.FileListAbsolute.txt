@@ -1,0 +1,12 @@
+C:\Users\alumno\Desktop\Operadores Matematicos\Operadores Matematicos\bin\Debug\Operadores Matematicos.exe.config
+C:\Users\alumno\Desktop\Operadores Matematicos\Operadores Matematicos\bin\Debug\Operadores Matematicos.exe
+C:\Users\alumno\Desktop\Operadores Matematicos\Operadores Matematicos\bin\Debug\Operadores Matematicos.pdb
+C:\Users\alumno\Desktop\Operadores Matematicos\Operadores Matematicos\obj\Debug\Operadores Matematicos.csprojResolveAssemblyReference.cache
+C:\Users\alumno\Desktop\Operadores Matematicos\Operadores Matematicos\obj\Debug\Operadores_Matematicos.Form1.resources
+C:\Users\alumno\Desktop\Operadores Matematicos\Operadores Matematicos\obj\Debug\Operadores_Matematicos.Properties.Resources.resources
+C:\Users\alumno\Desktop\Operadores Matematicos\Operadores Matematicos\obj\Debug\Operadores Matematicos.csproj.GenerateResource.Cache
+C:\Users\alumno\Desktop\Operadores Matematicos\Operadores Matematicos\obj\Debug\Operadores Matematicos.exe
+C:\Users\alumno\Desktop\Operadores Matematicos\Operadores Matematicos\obj\Debug\Operadores Matematicos.pdb
+C:\Users\alumno\Desktop\Clase01y02\C#\Operadores Matematicos\Operadores Matematicos\bin\Debug\Operadores Matematicos.exe.config
+C:\Users\alumno\Desktop\Clase01y02\C#\Operadores Matematicos\Operadores Matematicos\obj\Debug\Operadores Matematicos.exe
+C:\Users\alumno\Desktop\Clase01y02\C#\Operadores Matematicos\Operadores Matematicos\obj\Debug\Operadores Matematicos.pdb
